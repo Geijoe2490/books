@@ -1,0 +1,595 @@
+gigya._.apiAdapters.web.callback({
+  "threadCount": 23,
+  "comments": [
+    {
+      "ID": "3821e4ee2e814452bde48fbe393d4455",
+      "streamId": "2078034",
+      "threadID": "",
+      "isModerator": false,
+      "commentText": "nice once and visit http://www.javaproficiency.com/2015/03/spring-tutorial.html",
+      "TotalVotes": 1,
+      "posVotes": 1,
+      "vote": "none",
+      "sender": {
+        "photoURL": "https://graph.facebook.com/v2.3/1465485290436908/picture?type=square",
+        "profileURL": "https://www.facebook.com/app_scoped_user_id/1465485290436908/",
+        "name": "Java Pro",
+        "isSelf": false,
+        "loginProvider": "Facebook"
+      },
+      "flagCount": 0,
+      "highlightGroups": [],
+      "edited": false,
+      "timestamp": 1442062683344,
+      "threadTimestamp": 1442062683344,
+      "status": "published"
+    },
+    {
+      "ID": "20a45772419c4062b434d0c629e1bc02",
+      "streamId": "2078034",
+      "threadID": "",
+      "isModerator": false,
+      "commentText": "<p>can you develop a web application using spring mvc and jdbc for mysql. <br />the ui should have a jsp page which shd contain a text area and a submit button. in text area sql queries should be typed and it should fetch the info from the db(mysql).</p>",
+      "TotalVotes": 0,
+      "posVotes": 0,
+      "vote": "none",
+      "descendantsCount": 1,
+      "sender": {
+        "name": "yahoo-KWRCS4HNS4N4WWUWPXUR2UZ5BA",
+        "isSelf": false
+      },
+      "flagCount": 0,
+      "replies": [
+        {
+          "ID": "02039a93e9084711865824dcb3b49615",
+          "streamId": "2078034",
+          "parentID": "20a45772419c4062b434d0c629e1bc02",
+          "threadID": "20a45772419c4062b434d0c629e1bc02",
+          "isModerator": false,
+          "commentText": "<p>Of course you can. But why would you want to put sql statements in a JSP? That's like making your site a sitting duck for hackers!!</p>",
+          "TotalVotes": 0,
+          "posVotes": 0,
+          "vote": "none",
+          "sender": {
+            "name": "vishwasshashidhar",
+            "isSelf": false
+          },
+          "flagCount": 0,
+          "highlightGroups": [],
+          "edited": false,
+          "timestamp": 1385710532000,
+          "threadTimestamp": 0,
+          "status": "published"
+        }
+      ],
+      "highlightGroups": [],
+      "edited": false,
+      "timestamp": 1362139665000,
+      "threadTimestamp": 1385710532000,
+      "status": "published"
+    },
+    {
+      "ID": "f52659eea0ef422eb3ac5668b501aa46",
+      "streamId": "2078034",
+      "threadID": "",
+      "isModerator": false,
+      "commentText": "<p>Thanks for posting this . http://javakeexample.blogspot....</p>",
+      "TotalVotes": 0,
+      "posVotes": 0,
+      "vote": "none",
+      "sender": {
+        "name": "google-d1b3cec0d3a84075ccb52db6fe2c80cb",
+        "isSelf": false
+      },
+      "flagCount": 0,
+      "highlightGroups": [],
+      "edited": false,
+      "timestamp": 1355914829000,
+      "threadTimestamp": 1418267917087,
+      "status": "published"
+    },
+    {
+      "ID": "b143662a28674990b642e7e8f10e9e4d",
+      "streamId": "2078034",
+      "threadID": "",
+      "isModerator": false,
+      "commentText": "<p>Thanks for such nicely described spring MVC internals.</p>",
+      "TotalVotes": 0,
+      "posVotes": 0,
+      "vote": "none",
+      "sender": {
+        "name": "google-9b58ce988680eedfa5dc84c186cb9efe",
+        "isSelf": false
+      },
+      "flagCount": 0,
+      "highlightGroups": [],
+      "edited": false,
+      "timestamp": 1354953344000,
+      "threadTimestamp": 1418267916709,
+      "status": "published"
+    },
+    {
+      "ID": "9d43faacafc645ab8bd2983827a2a1c2",
+      "streamId": "2078034",
+      "threadID": "",
+      "isModerator": false,
+      "commentText": "<p>Are the contents and structures of the GeekNewsService and NewsArticle classes ever discussed?&amp;#160;Did I miss something somewhere?&amp;#160;Or is it simply outside of the scope of this article?</p>",
+      "TotalVotes": 0,
+      "posVotes": 0,
+      "vote": "none",
+      "sender": {
+        "name": "kenbellows",
+        "isSelf": false
+      },
+      "flagCount": 0,
+      "highlightGroups": [],
+      "edited": false,
+      "timestamp": 1345731766000,
+      "threadTimestamp": 1418267914366,
+      "status": "published"
+    },
+    {
+      "ID": "a56573e977c34363abb068b722ea96c2",
+      "streamId": "2078034",
+      "threadID": "",
+      "isModerator": false,
+      "commentText": "<p>one of the best article on spring mvc I ever read.</p>",
+      "TotalVotes": 0,
+      "posVotes": 0,
+      "vote": "none",
+      "descendantsCount": 2,
+      "sender": {
+        "name": "google-f3a6d5f9d0963f416cd9bc2a7ebdd7b7",
+        "isSelf": false
+      },
+      "flagCount": 0,
+      "replies": [
+        {
+          "ID": "af7c3603c56543a8aec660f41759e3e8",
+          "streamId": "2078034",
+          "parentID": "a56573e977c34363abb068b722ea96c2",
+          "threadID": "a56573e977c34363abb068b722ea96c2",
+          "isModerator": false,
+          "commentText": "<p>I wholeheartedly agree. I'm learning about this technology and the frameworks to implement it. This article starts at a great level for the newbie to MVC and Spring and helps to put it all together. Rather than PhD's expousing a bunch of highfalutin terms and attitude, Steven Haines has explained it in a very palatable way. Thank you for that!</p>",
+          "TotalVotes": 0,
+          "posVotes": 0,
+          "vote": "none",
+          "sender": {
+            "name": "williamdor",
+            "isSelf": false
+          },
+          "flagCount": 0,
+          "highlightGroups": [],
+          "edited": false,
+          "timestamp": 1328236551000,
+          "threadTimestamp": 0,
+          "status": "published"
+        },
+        {
+          "ID": "3cad7b5a71a248958ef2366d55d405ae",
+          "streamId": "2078034",
+          "parentID": "a56573e977c34363abb068b722ea96c2",
+          "threadID": "a56573e977c34363abb068b722ea96c2",
+          "isModerator": false,
+          "commentText": "<p>I had a very complementary post, but because I had to stop to register before leaving the&amp;#160;post the registration process lost it. How ironic that the G.D. web developer for this feature at this site doesn't even test his code when this isn't the first time someone has had to start over. Not a good way to win me over.</p>",
+          "TotalVotes": 0,
+          "posVotes": 0,
+          "vote": "none",
+          "sender": {
+            "name": "williamdor",
+            "isSelf": false
+          },
+          "flagCount": 0,
+          "highlightGroups": [],
+          "edited": false,
+          "timestamp": 1328239240000,
+          "threadTimestamp": 0,
+          "status": "published"
+        }
+      ],
+      "highlightGroups": [],
+      "edited": false,
+      "timestamp": 1323339560000,
+      "threadTimestamp": 1328239240000,
+      "status": "published"
+    },
+    {
+      "ID": "ebf8da7e3590408787686d0038055966",
+      "streamId": "2078034",
+      "threadID": "",
+      "isModerator": false,
+      "commentText": "<p>JUnit Test Cases<br />Above artical is very good and useful. I want to know how to implement JUnit Test cases for the above Controller class.Thanks in Advance.</p>",
+      "TotalVotes": 0,
+      "posVotes": 0,
+      "vote": "none",
+      "sender": {
+        "name": "Anonymous",
+        "isSelf": false
+      },
+      "flagCount": 0,
+      "highlightGroups": [],
+      "edited": false,
+      "timestamp": 1279779420000,
+      "threadTimestamp": 1418267899187,
+      "status": "published"
+    },
+    {
+      "ID": "d36e0a1061ae414c9e3aa39158025b6a",
+      "streamId": "2078034",
+      "threadID": "",
+      "isModerator": false,
+      "commentText": "<p>70-680 exam<br />Microsoft MCITP practice exams are just the MCSE beginning. With each exam you will see real Microsoft MCITP practice questions giving you the ultimate Microsoft MCITP MCSE Exam preparation available online anywhere. Where else can you find an Microsoft MCITP study pack with so many MCSE Exam possibilities? 70-620 Exam</p><p />",
+      "TotalVotes": 0,
+      "posVotes": 0,
+      "vote": "none",
+      "sender": {
+        "name": "Anonymous",
+        "isSelf": false
+      },
+      "flagCount": 0,
+      "highlightGroups": [],
+      "edited": false,
+      "timestamp": 1278543120000,
+      "threadTimestamp": 1418267898652,
+      "status": "published"
+    },
+    {
+      "ID": "feb8e150cb624f9fbaa18a8465820e7b",
+      "streamId": "2078034",
+      "threadID": "",
+      "isModerator": false,
+      "commentText": "<p>also check another mvc based pattern named shine <br />http://sourceforge.net/project...</p>",
+      "TotalVotes": 0,
+      "posVotes": 0,
+      "vote": "none",
+      "sender": {
+        "name": "Anonymous",
+        "isSelf": false
+      },
+      "flagCount": 0,
+      "highlightGroups": [],
+      "edited": false,
+      "timestamp": 1277972520000,
+      "threadTimestamp": 1418267898282,
+      "status": "published"
+    },
+    {
+      "ID": "dc89c7c52ec447ba86df7bc77f948660",
+      "streamId": "2078034",
+      "threadID": "",
+      "isModerator": false,
+      "commentText": "<p><br />&amp;#1604;&amp;#1593;&amp;#1576;&amp;#1577; &amp;#1583;&amp;#1610;&amp;#1603;&amp;#1608;&amp;#1585; &amp;#1605;&amp;#1606;&amp;#1586;&amp;#1604;  <br />&amp;#1604;&amp;#1593;&amp;#1576;&amp;#1577; &amp;#1578;&amp;#1585;&amp;#1578;&amp;#1610;&amp;#1576; &amp;#1605;&amp;#1606;&amp;#1586;&amp;#1604; &amp;#1575;&amp;#1604;&amp;#1593;&amp;#1575;&amp;#1574;&amp;#1604;&amp;#1577; <br />&amp;#1604;&amp;#1593;&amp;#1576;&amp;#1577; &amp;#1587;&amp;#1575;&amp;#1606;&amp;#1578;&amp;#1575; &amp;#1603;&amp;#1604;&amp;#1608;&amp;#1586; <br />&amp;#1604;&amp;#1593;&amp;#1576;&amp;#1577; &amp;#1576;&amp;#1575;&amp;#1576;&amp;#1575; &amp;#1606;&amp;#1608;&amp;#1610;&amp;#1604; <br />&amp;#1575;&amp;#1604;&amp;#1593;&amp;#1575;&amp;#1576; &amp;#1601;&amp;#1604;&amp;#1575;&amp;#1588; <br />&amp;#1575;&amp;#1604;&amp;#1593;&amp;#1575;&amp;#1576; &amp;#1575;&amp;#1591;&amp;#1601;&amp;#1575;&amp;#1604; <br />&amp;#1575;&amp;#1604;&amp;#1593;&amp;#1575;&amp;#1576; &amp;#1576;&amp;#1575;&amp;#1586;&amp;#1604; <br />&amp;#1575;&amp;#1604;&amp;#1593;&amp;#1575;&amp;#1576; &amp;#1575;&amp;#1604;&amp;#1576;&amp;#1606;&amp;#1575;&amp;#1578; <br />&amp;#1575;&amp;#1604;&amp;#1593;&amp;#1575;&amp;#1576; &amp;#1578;&amp;#1587;&amp;#1583;&amp;#1610;&amp;#1583; &amp;#1608;&amp;#1606;&amp;#1610;&amp;#1588;&amp;#1575;&amp;#1606; <br />&amp;#1575;&amp;#1604;&amp;#1593;&amp;#1575;&amp;#1576; &amp;#1584;&amp;#1603;&amp;#1575;&amp;#1569; <br />&amp;#1575;&amp;#1604;&amp;#1593;&amp;#1575;&amp;#1576; &amp;#1585;&amp;#1610;&amp;#1575;&amp;#1590;&amp;#1610;&amp;#1577; <br />&amp;#1575;&amp;#1604;&amp;#1593;&amp;#1575;&amp;#1576; &amp;#1587;&amp;#1610;&amp;#1575;&amp;#1585;&amp;#1575;&amp;#1578; &amp;#1608;&amp;#1583;&amp;#1585;&amp;#1575;&amp;#1580;&amp;#1575;&amp;#1578; <br />&amp;#1575;&amp;#1604;&amp;#1593;&amp;#1575;&amp;#1576; &amp;#1589;&amp;#1608;&amp;#1585; <br />&amp;#1575;&amp;#1604;&amp;#1593;&amp;#1575;&amp;#1576; &amp;#1593;&amp;#1585;&amp;#1576;&amp;#1610;&amp;#1577; <br />&amp;#1575;&amp;#1604;&amp;#1593;&amp;#1575;&amp;#1576; &amp;#1602;&amp;#1578;&amp;#1575;&amp;#1604;&amp;#1610;&amp;#1577; <br />&amp;#1604;&amp;#1593;&amp;#1576;&amp;#1577; &amp;#1578;&amp;#1593;&amp;#1604;&amp;#1610;&amp;#1605; &amp;#1575;&amp;#1604;&amp;#1575;&amp;#1606;&amp;#1580;&amp;#1604;&amp;#1610;&amp;#1586;&amp;#1610;&amp;#1577;<br />&amp;#1604;&amp;#1593;&amp;#1576;&amp;#1577; &amp;#1581;&amp;#1585;&amp;#1576; &amp;#1605;&amp;#1575;&amp;#1585;&amp;#1610;&amp;#1608; <br />&amp;#1604;&amp;#1593;&amp;#1576;&amp;#1577; &amp;#1575;&amp;#1604;&amp;#1591;&amp;#1601;&amp;#1604; &amp;#1575;&amp;#1604;&amp;#1605;&amp;#1593;&amp;#1580;&amp;#1586;&amp;#1577; <br />&amp;#1604;&amp;#1593;&amp;#1576;&amp;#1577; &amp;#1584;&amp;#1603;&amp;#1575;&amp;#1569; <br />&amp;#1604;&amp;#1593;&amp;#1576;&amp;#1577; &amp;#1578;&amp;#1585;&amp;#1603;&amp;#1610;&amp;#1576; &amp;#1575;&amp;#1604;&amp;#1575;&amp;#1591;&amp;#1601;&amp;#1575;&amp;#1604; <br />&amp;#1604;&amp;#1593;&amp;#1576;&amp;#1577; &amp;#1575;&amp;#1604;&amp;#1591;&amp;#1601;&amp;#1604; &amp;#1575;&amp;#1604;&amp;#1584;&amp;#1603;&amp;#1610; <br />&amp;#1604;&amp;#1593;&amp;#1576;&amp;#1577; &amp;#1575;&amp;#1591;&amp;#1601;&amp;#1575;&amp;#1604; &amp;#1578;&amp;#1608;&amp;#1605; &amp;#1608;&amp;#1580;&amp;#1610;&amp;#1585;&amp;#1610; <br />&amp;#1604;&amp;#1593;&amp;#1576;&amp;#1577; &amp;#1575;&amp;#1604;&amp;#1576;&amp;#1610;&amp;#1576;&amp;#1610; &amp;#1583;&amp;#1608;&amp;#1604;&amp;#1586; <br />&amp;#1604;&amp;#1593;&amp;#1576;&amp;#1577; &amp;#1593;&amp;#1604;&amp;#1575;&amp;#1569; &amp;#1575;&amp;#1604;&amp;#1583;&amp;#1610;&amp;#1606; <br />&amp;#1604;&amp;#1593;&amp;#1576;&amp;#1577; &amp;#1587;&amp;#1608;&amp;#1606;&amp;#1610;&amp;#1603; <br />&amp;#1604;&amp;#1593;&amp;#1576;&amp;#1577; &amp;#1576;&amp;#1575;&amp;#1585;&amp;#1576;&amp;#1610; &amp;#1608;&amp;#1587;&amp;#1603;&amp;#1608;&amp;#1576;&amp;#1610; &amp;#1583;&amp;#1608; <br />&amp;#1604;&amp;#1593;&amp;#1576;&amp;#1577; &amp;#1605;&amp;#1610;&amp;#1603;&amp;#1610; &amp;#1605;&amp;#1575;&amp;#1608;&amp;#1587; <br />&amp;#1604;&amp;#1593;&amp;#1576;&amp;#1577; &amp;#1605;&amp;#1606; &amp;#1587;&amp;#1610;&amp;#1585;&amp;#1576;&amp;#1581; &amp;#1575;&amp;#1604;&amp;#1605;&amp;#1604;&amp;#1610;&amp;#1608;&amp;#1606; <br />&amp;#1604;&amp;#1593;&amp;#1576;&amp;#1577; &amp;#1585;&amp;#1603;&amp;#1604;&amp;#1575;&amp;#1578; &amp;#1575;&amp;#1604;&amp;#1578;&amp;#1585;&amp;#1580;&amp;#1610;&amp;#1581; <br />&amp;#1604;&amp;#1593;&amp;#1576;&amp;#1577; &amp;#1591;&amp;#1585;&amp;#1586;&amp;#1575;&amp;#1606; <br />&amp;#1604;&amp;#1593;&amp;#1576;&amp;#1577; &amp;#1589;&amp;#1608;&amp;#1585; &amp;#1575;&amp;#1604;&amp;#1605;&amp;#1588;&amp;#1575;&amp;#1607;&amp;#1610;&amp;#1585; <br />&amp;#1604;&amp;#1593;&amp;#1576;&amp;#1577; &amp;#1575;&amp;#1606;&amp;#1580;&amp;#1604;&amp;#1610;&amp;#1606;&amp;#1575; &amp;#1580;&amp;#1608;&amp;#1604;&amp;#1610; <br />&amp;#1604;&amp;#1593;&amp;#1576;&amp;#1577; &amp;#1575;&amp;#1582;&amp;#1578;&amp;#1576;&amp;#1575;&amp;#1585; &amp;#1575;&amp;#1604;&amp;#1584;&amp;#1575;&amp;#1603;&amp;#1585;&amp;#1577; <br />&amp;#1604;&amp;#1593;&amp;#1576;&amp;#1577; &amp;#1606;&amp;#1602;&amp;#1604; &amp;#1575;&amp;#1604;&amp;#1576;&amp;#1591;&amp;#1610;&amp;#1582; <br />&amp;#1604;&amp;#1593;&amp;#1576;&amp;#1577; &amp;#1587;&amp;#1575;&amp;#1576;&amp;#1602; &amp;#1608;&amp;#1604;&amp;#1575;&amp;#1581;&amp;#1602; <br />&amp;#1604;&amp;#1593;&amp;#1576;&amp;#1577; &amp;#1594;&amp;#1575;&amp;#1576;&amp;#1577; &amp;#1575;&amp;#1604;&amp;#1575;&amp;#1585;&amp;#1602;&amp;#1575;&amp;#1605; </p>",
+      "TotalVotes": 0,
+      "posVotes": 0,
+      "vote": "none",
+      "sender": {
+        "name": "Anonymous",
+        "isSelf": false
+      },
+      "flagCount": 0,
+      "highlightGroups": [],
+      "edited": false,
+      "timestamp": 1275917400000,
+      "threadTimestamp": 1418267895661,
+      "status": "published"
+    },
+    {
+      "ID": "128459bf9700488f86f4cad3277f5e19",
+      "streamId": "2078034",
+      "threadID": "",
+      "isModerator": false,
+      "commentText": "<p>behind the times<br />Check out Spring @MCV - i.e., Spring MVC with annotations.</p><p>This makes SimpleFormController and the rest obsolete. </p>",
+      "TotalVotes": 0,
+      "posVotes": 0,
+      "vote": "none",
+      "sender": {
+        "name": "Anonymous",
+        "isSelf": false
+      },
+      "flagCount": 0,
+      "highlightGroups": [],
+      "edited": false,
+      "timestamp": 1266143700000,
+      "threadTimestamp": 1418267883634,
+      "status": "published"
+    },
+    {
+      "ID": "5c321ee429b046eda66bd9e067b3212a",
+      "streamId": "2078034",
+      "threadID": "",
+      "isModerator": false,
+      "commentText": "<p>html will be here for along time<br />I saw this article through googling and had some issues with some of the comments.</p><p>Web frameworks are specifically for the purpose of server side interactions.<br />Flash/Silverlight etc are only player based implementations of the client side of the MVC framework.<br />The player based technologies won't replace web frameworks, indeed it's likely that over the next few years player based technologies will become unnecessary considering the drive towards HTML 5.<br />It's not a case of an MVC framework or flash/silverlight etc, client side technologies are the view part of the MVC and the view should be interchangeable and not dependent on any frameworks.<br />If a web framework doesn't support client side requirements then it should strive to support them</p><p> </p>",
+      "TotalVotes": 0,
+      "posVotes": 0,
+      "vote": "none",
+      "sender": {
+        "name": "Anonymous",
+        "isSelf": false
+      },
+      "flagCount": 0,
+      "highlightGroups": [],
+      "edited": false,
+      "timestamp": 1265641080000,
+      "threadTimestamp": 1418267882557,
+      "status": "published"
+    },
+    {
+      "ID": "c80c205e04b5417b81a88fa8ff3e78b9",
+      "streamId": "2078034",
+      "threadID": "",
+      "isModerator": false,
+      "commentText": "<p>This is good tutorial. Can get another good tutorial on http://arpitapandit.wordpress....</p>",
+      "TotalVotes": 0,
+      "posVotes": 0,
+      "vote": "none",
+      "sender": {
+        "name": "Anonymous",
+        "isSelf": false
+      },
+      "flagCount": 0,
+      "highlightGroups": [],
+      "edited": false,
+      "timestamp": 1261466940000,
+      "threadTimestamp": 1418267877963,
+      "status": "published"
+    },
+    {
+      "ID": "f919c916bbdb4e33ace48f4cbb6d9495",
+      "streamId": "2078034",
+      "threadID": "",
+      "isModerator": false,
+      "commentText": "<p>spring mvc/other spring initiatives are very dead<br />Look at the forums at spring source.  Spring security and other project announcements have 0 comments in them.</p>",
+      "TotalVotes": 0,
+      "posVotes": 0,
+      "vote": "none",
+      "sender": {
+        "name": "Anonymous",
+        "isSelf": false
+      },
+      "flagCount": 0,
+      "highlightGroups": [],
+      "edited": false,
+      "timestamp": 1259158200000,
+      "threadTimestamp": 1418267875383,
+      "status": "published"
+    },
+    {
+      "ID": "e7e6c604a3af43a69794fa04ae702ff1",
+      "streamId": "2078034",
+      "threadID": "",
+      "isModerator": false,
+      "commentText": "<p>Thanks a lot for the tutorial...<br />Thanks a lot for the tutorial. For MVC Framework till now I was using Struts. Now I got good idea about of SPRING also.</p>",
+      "TotalVotes": 0,
+      "posVotes": 0,
+      "vote": "none",
+      "sender": {
+        "name": "arinsblogcdut",
+        "isSelf": false
+      },
+      "flagCount": 0,
+      "highlightGroups": [],
+      "edited": false,
+      "timestamp": 1248287760000,
+      "threadTimestamp": 1418267863098,
+      "status": "published"
+    },
+    {
+      "ID": "40439423213c44699481a8947ac420ca",
+      "streamId": "2078034",
+      "threadID": "",
+      "isModerator": false,
+      "commentText": "<p>Very useful<br />This tutorial was very helpful.</p><p>Thanks,<br />Vaannila</p>",
+      "TotalVotes": 0,
+      "posVotes": 0,
+      "vote": "none",
+      "sender": {
+        "name": "Anonymous",
+        "isSelf": false
+      },
+      "flagCount": 0,
+      "highlightGroups": [],
+      "edited": false,
+      "timestamp": 1246287180000,
+      "threadTimestamp": 1418267861164,
+      "status": "published"
+    },
+    {
+      "ID": "7cc9533de20d48b5bd4c5b3727ce8aba",
+      "streamId": "2078034",
+      "threadID": "",
+      "isModerator": false,
+      "commentText": "<p>Annotation-based SpringMVC is perfered, Rod said so...<br />Annotation-based SpringMVC is perfered, Rod said so. After Spring3.0, old style SpringMVC will be deprecated.</p>",
+      "TotalVotes": 0,
+      "posVotes": 0,
+      "vote": "none",
+      "sender": {
+        "name": "Anonymous",
+        "isSelf": false
+      },
+      "flagCount": 0,
+      "highlightGroups": [],
+      "edited": false,
+      "timestamp": 1242104940000,
+      "threadTimestamp": 1418267856828,
+      "status": "published"
+    },
+    {
+      "ID": "5833243ef45940279bf10c71441e451d",
+      "streamId": "2078034",
+      "threadID": "",
+      "isModerator": false,
+      "commentText": "<p>Annotation &gt; Extends.</p><p>While annotations don't reduce coupling (no-one said they did) they do make code \"cleaner\" for the following reasons: you can put your URL mappings right in the class instead of the XML which makes the code more readable, also you can have meaningful method names which take ONLY the parameters you are actually going to use in the method, such as this...</p><p><br />@Controller<br />public class LogoutController <br />{<br />   @RequestMapping(\"/logout.htm\")<br />   public String logout (HttpSession session)<br />      throws Exception<br />   {<br />      session.invalidate();<br />      return \"redirect:/\";<br />   }<br />}<br /></p><p>As these classes are still technically POJO's and aren't littered with extraneous parameters, they are infinitely easier to write test cases for.<br />This is a huge improvement over the old Spring way of extending some random class and trying to decipher which method you need to override. Besides all that Spring is deprecating the non-annotation frame work in future releases. XML based Spring is dead/dying. Long live Annotation based Spring.<br /></p>",
+      "TotalVotes": 0,
+      "posVotes": 0,
+      "vote": "none",
+      "descendantsCount": 1,
+      "sender": {
+        "name": "Anonymous",
+        "isSelf": false
+      },
+      "flagCount": 0,
+      "replies": [
+        {
+          "ID": "0c2afed54c31404f9c9f986d1015961d",
+          "streamId": "2078034",
+          "parentID": "5833243ef45940279bf10c71441e451d",
+          "threadID": "5833243ef45940279bf10c71441e451d",
+          "isModerator": false,
+          "commentText": "<p>Annotations versus XML<br /></p><p>I actually fall on both sides of this issue: I believe that annotations are cleaner, but I also believe that XML is more manageable. In a large project I personally find it easier to have a set of XML files that I can consult to understand how the application is working as opposed to traversing through dozens of classes to read their annotations. And especially when we separate functionality into web, dao, service, etc. Thus if I have a problematic URL I can quickly find its controller and resultant view - with annotations it can be a little more difficult because the logic is spread out across multiple source code files. </p><p><br /></p><p>I think it is really a personal preference.. If you like annotations then go for it, if you like XML, enjoy...</p>",
+          "TotalVotes": 0,
+          "posVotes": 0,
+          "vote": "none",
+          "sender": {
+            "name": "ligado",
+            "isSelf": false
+          },
+          "flagCount": 0,
+          "highlightGroups": [],
+          "edited": false,
+          "timestamp": 1242123900000,
+          "threadTimestamp": 0,
+          "status": "published"
+        }
+      ],
+      "highlightGroups": [],
+      "edited": false,
+      "timestamp": 1241200980000,
+      "threadTimestamp": 1242123900000,
+      "status": "published"
+    },
+    {
+      "ID": "e42ed85a6a774ecaba265d2b04d7947d",
+      "streamId": "2078034",
+      "threadID": "",
+      "isModerator": false,
+      "commentText": "<p>annotations are not cleaner<br />Annotations are no cleaner than creating custom classes implementing Spring interfaces or extending Spring classes.<br />You still have hard coupling between the framework and your own code.<br />What you should always strive for in real applications is to limit such coupling to as few places as possible, to wrte the framework interface classes as thin wrappers around your actual business logic classes. But for sample code that's just going to add an extra layer of confusion that obscures the issues being demonstrated.<br /></p>",
+      "TotalVotes": 0,
+      "posVotes": 0,
+      "vote": "none",
+      "sender": {
+        "name": "jwenting",
+        "isSelf": false
+      },
+      "flagCount": 0,
+      "highlightGroups": [],
+      "edited": false,
+      "timestamp": 1240970340000,
+      "threadTimestamp": 1418267867576,
+      "status": "published"
+    },
+    {
+      "ID": "f1ba5f3998054e499cef11b3181a396c",
+      "streamId": "2078034",
+      "threadID": "",
+      "isModerator": false,
+      "commentText": "<p>Spring MVC Annotations<br />The article describes how to do Spring MVC the ancient way by extending Spring MVC specific classes.  Why aren't you using annotations instead for cleaner implementation?</p>",
+      "TotalVotes": 0,
+      "posVotes": 0,
+      "vote": "none",
+      "sender": {
+        "name": "Aries McRae",
+        "isSelf": false
+      },
+      "flagCount": 0,
+      "highlightGroups": [],
+      "edited": false,
+      "timestamp": 1240943940000,
+      "threadTimestamp": 1418267863957,
+      "status": "published"
+    },
+    {
+      "ID": "82b971026bfc4872ae4e5c00c2895d5d",
+      "streamId": "2078034",
+      "threadID": "",
+      "isModerator": false,
+      "commentText": "<p>I actually believe that for \"advanced\" GUIs, the key is to be able to decouple the \"server\" side of the GUI from the \"client\" side.  JavaScript and the browser is a powerful platform, and it should be developed along with, and independently from, the server side of the application.</p><p>If this is a valid strategy, then frameworks that attempt to package, hide, or encapsulate the JavaScript portion of the application will in the long run be a disadvantage for developing \"advanced\" GUIs.</p><p>Therefore, frameworks like Spring MVC and Struts 2 (I'm sure there are others) that allow loose integration of the client side of the application will be less of an obstacle.  using these frameworks, integrating Flex and Ajax and other pure client-side frameworks will be easier, especially when you need to do something  that wasn't encapsulated into the server-side framework.</p>",
+      "TotalVotes": 0,
+      "posVotes": 0,
+      "vote": "none",
+      "descendantsCount": 1,
+      "sender": {
+        "name": "David M. Karr",
+        "isSelf": false
+      },
+      "flagCount": 0,
+      "replies": [
+        {
+          "ID": "ec446c47f0be4b318c59b8c0ecfcfba8",
+          "streamId": "2078034",
+          "parentID": "82b971026bfc4872ae4e5c00c2895d5d",
+          "threadID": "82b971026bfc4872ae4e5c00c2895d5d",
+          "isModerator": false,
+          "commentText": "<p>\"If this is a valid strategy, then frameworks that attempt to package, hide, or encapsulate the JavaScript portion of the application will in the long run be a disadvantage for developing \"advanced\" GUIs.\"</p><p>JSF is a framework that is deeply entrenched in this disadvantage.  It has a massive learning curve to create a more complex custom component.  It's even harder to create a custom component that has javascript.  It would be very hard to create a truly custom interactive gui in JSF.  Which is why I prefer spring.</p><p>Spring allows us just to deliver the payload of data and then manipulate with whatever client type we choose.  As a side note I also prefer REST style api's as that also decouples the server from the client.</p>",
+          "TotalVotes": 0,
+          "posVotes": 0,
+          "vote": "none",
+          "sender": {
+            "name": "mzazzali",
+            "isSelf": false
+          },
+          "flagCount": 0,
+          "highlightGroups": [],
+          "edited": false,
+          "timestamp": 1241011140000,
+          "threadTimestamp": 0,
+          "status": "published"
+        }
+      ],
+      "highlightGroups": [],
+      "edited": false,
+      "timestamp": 1240919700000,
+      "threadTimestamp": 1241011140000,
+      "status": "published"
+    },
+    {
+      "ID": "76cdd97b25d54b5ea304be78980d78a2",
+      "streamId": "2078034",
+      "threadID": "",
+      "isModerator": false,
+      "commentText": "<p>Spring MVC is still very relevant<br />I agree and disagree with your comment. I agree that when building interactive rich web applications, it might be better to use a technology like Adobe Flex (which I love), but for standard web applications, HTML/CSS/JS is still heavily used. As a matter of fact, on my last contract we rewrote the architecture for the public web site (a major amusement park and resort company) using Spring MVC on the backend and HTML/CSS/JS on the frontend. We had elements of Flash (which could have been Flex) embedded in the pages, but the majority of the frontend was HTML/CSS/JS.</p><p>I think it is really the case of using the right tool for the job - web pages should still be written using HTML/CSS/JS because people are used to them, they works better for SEO optimization, and there's a plethora of talent for building those pages. And then use Flex, or another RIA framework, for the \"richer\" content. For example, if you have a media player (audio, video, slide deck, etc) or an Intranet application like a call center or database frontend, then implement it with Flex. This is probably why you see sites like JavaWorld, TSS, InfoQ, etc, still running HTML/CSS/JS on the front end with embedded rich content as appropriate. At some point in the future the paradigm will shift and frontend applications will be built with a rich Internet application framework, but for the foreseeable future it's still going to be a mix of traditional HTML/CSS/JS with embedded rich client technology as appropriate.</p><p>And as far as relevancy, Spring MVC is alive and well and is one of the best ways to build HTML/CSS/JS Java web applications...</p><p>Thanks for your comment!</p>",
+      "TotalVotes": 0,
+      "posVotes": 0,
+      "vote": "none",
+      "sender": {
+        "name": "Steven Haines",
+        "isSelf": false
+      },
+      "flagCount": 0,
+      "highlightGroups": [],
+      "edited": false,
+      "timestamp": 1240911540000,
+      "threadTimestamp": 1418267860681,
+      "status": "published"
+    },
+    {
+      "ID": "6175315c2dec40b687ccc1fb798c101c",
+      "streamId": "2078034",
+      "threadID": "",
+      "isModerator": false,
+      "commentText": "<p>updated explanation link URL typo<br />ttp://www.javaworld.com/commun... yields an error page, should be http://www.javaworld.com/commu...</p>",
+      "TotalVotes": 0,
+      "posVotes": 0,
+      "vote": "none",
+      "sender": {
+        "name": "Anonymous",
+        "isSelf": false
+      },
+      "flagCount": 0,
+      "highlightGroups": [],
+      "edited": false,
+      "timestamp": 1240905180000,
+      "threadTimestamp": 1418267856016,
+      "status": "published"
+    }
+  ],
+  "commentCount": 28,
+  "next": "ts_1240905180000",
+  "nextTS": 1240905180000,
+  "hasMore": false,
+  "statusCode": 200,
+  "errorCode": 0,
+  "statusReason": "OK",
+  "callId": "b7f87e6a68634a93820c069a4a2bd24b",
+  "time": "2015-11-20T07:05:50.391Z",
+  "context": "R1363956564"
+});

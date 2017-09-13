@@ -1,0 +1,1639 @@
+<!DOCTYPE html>
+<!-- saved from url=(0087)http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US" prefix="og: http://ogp.me/ns#"><head profile="http://gmpg.org/xfn/11"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow</title>
+<link rel="Shortcut Icon" type="image/x-icon" href="http://www.java4s.com/wp-content/themes/strPro4Tut/java4s/favicon.ico">
+
+<!-- This site is optimized with the Yoast WordPress SEO plugin v1.7.4 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Flow of Spring MVC 3.2, spring mvc flow diagram, how to execute spring mvc web application, spring mvc execution flow with explanation. Spring mvc step by step">
+<meta name="keywords" content="spring mvc flow, spring mvc execution flow, spring mvc in eclipse, spring mvc flow diagram, spring mvc web application, spring mvc hello world, flow of spring mvc">
+<link rel="canonical" href="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow.html">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow">
+<meta property="og:description" content="Flow of Spring MVC 3.2, spring mvc flow diagram, how to execute spring mvc web application, spring mvc execution flow with explanation. Spring mvc step by step">
+<meta property="og:url" content="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/">
+<meta property="og:site_name" content="Java4s ::. Java Tutorials">
+<meta property="article:tag" content="flow,spring,spring framework,spring introduction">
+<meta property="article:section" content="Spring-MVC">
+<meta property="article:published_time" content="2013-07-13T09:09:18+00:00">
+<meta property="article:modified_time" content="2013-07-13T09:14:19+00:00">
+<meta property="og:updated_time" content="2013-07-13T09:14:19+00:00">
+<meta property="og:image" content="http://www.java4s.com/wp-content/uploads/2013/07/Spring-MVC-execution-flow.png">
+<!-- / Yoast WordPress SEO plugin. -->
+
+<link rel="alternate" type="application/rss+xml" title="Java4s ::. Java Tutorials » Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow Comments Feed" href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/feed/">
+<link rel="stylesheet" id="crayon-css" href="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/crayon.min.css" type="text/css" media="all">
+<script src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/cb=gapi.loaded_1" async=""></script><script src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/cb=gapi.loaded_0" async=""></script><script src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/ca-pub-0772613040117520.js"></script><script src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/ca-pub-0772613040117520.js"></script><script id="facebook-jssdk" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/all.js"></script><script type="text/javascript" async="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/ga.js"></script><script type="text/javascript" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/jquery.js"></script>
+<script type="text/javascript" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/jquery-migrate.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"2.6.9","is_admin":"0","ajaxurl":"http:\/\/www.java4s.com\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/crayon.min.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.java4s.com/xmlrpc.php?rsd">
+<link rel="shortlink" href="http://www.java4s.com/?p=4808">
+<script type="text/javascript">
+	window._wp_rp_static_base_url = 'https://wprp.zemanta.com/static/';
+	window._wp_rp_wp_ajax_url = "http://www.java4s.com/wp-admin/admin-ajax.php";
+	window._wp_rp_plugin_version = '3.5.3';
+	window._wp_rp_post_id = '4808';
+	window._wp_rp_num_rel_posts = '6';
+	window._wp_rp_thumbnails = false;
+	window._wp_rp_post_title = 'Spring+MVC+Execution+Flow+Diagram%2C+Spring+MVC+3.2+Flow';
+	window._wp_rp_post_tags = ['spring+introduction', 'spring+framework', 'spring', 'flow', 'spring-mvc', 'diagram', '4', 'displai', 'model', 'execut', 'alt', 'flow', 'control', 'transfer', 'practic', 'spring', '32', 'span', 'mvc', 'class'];
+	window._wp_rp_promoted_content = true;
+</script>
+<script type="text/javascript" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/loader.js" async=""></script>
+<script type="text/javascript" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/tw-sack.min.js"></script>
+<link href="https://plus.google.com/118054670710951892925" rel="publisher">
+<link rel="stylesheet" type="text/css" href="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/screen00500000.css">
+<link rel="stylesheet" type="text/css" href="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/screen0060000.css">
+<link rel="pingback" href="http://www.java4s.com/xmlrpc.php">
+<link href="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/css" rel="stylesheet" type="text/css">
+<link href="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/css(1)" rel="stylesheet" type="text/css">
+<link href="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/css(2)" rel="stylesheet" type="text/css">
+<!--   google Ana   -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-27325721-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<!--   google Ana Ovr   -->
+<!-- BuySellAds Ad Code -->
+<script type="text/javascript">
+(function(){
+  var bsa = document.createElement('script');
+     bsa.type = 'text/javascript';
+     bsa.async = true;
+     bsa.src = 'http://s3.buysellads.com/ac/bsa.js';
+  (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);
+})();
+</script><script type="text/javascript" async="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/bsa.js"></script>
+<!-- End BuySellAds Ad Code -->
+<script type="text/javascript" charset="utf-8" async="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/button.62c90500b68fa929c850cfa2c5dcb03f.js"></script><script type="text/javascript" id="_bsap_js_78cef6192f771ed3d6b56e99fa7592af" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/s_78cef6192f771ed3d6b56e99fa7592af.js" async="async"></script><script type="text/javascript" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/pro.js" id="_bsap_premium_pro"></script><script type="text/javascript" id="_bsaPRO_js" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/saved_resource" async="async"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow-x:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f8;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3a5795;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #2f477a;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f8;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v2/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style></head>
+<body>
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="Facebook Cross Domain Communication Frame" aria-hidden="true" tabindex="-1" id="fb_xdm_frame_http" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/TlA_zCeMkxl.html" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="Facebook Cross Domain Communication Frame" aria-hidden="true" tabindex="-1" id="fb_xdm_frame_https" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/TlA_zCeMkxl(1).html" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="topm">
+<div id="tbottom"></div>
+<div id="shadow">
+<div id="mobileLogo">
+<center>
+  <a href="http://www.java4s.com/">
+	<img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/java4s-watermark.png" id="imobileLogo">
+  </a>
+</center>
+</div>
+<div id="container4hd">		
+<!--header begin-->
+<center>
+<div id="header">		
+	<div class="tp"></div> <!--main logo -->
+		<div id="topad"></div>
+
+<div id="navbartop">
+	<ul id="navtop">
+		<li><a href="http://www.java4s.com/">Home</a></li>		
+		<li class="page_item page-item-2613"><a href="http://www.java4s.com/advertise-on-java4s/">Advertise</a></li>
+<li class="page_item page-item-677"><a href="http://www.java4s.com/about/">About Us</a></li>
+<li class="page_item page-item-679"><a href="http://www.java4s.com/contact/">Contact</a></li>
+<li class="page_item page-item-681"><a href="http://www.java4s.com/privacy-policy/">Privacy Policy</a></li>
+		<li style="padding-left: 50px;"></li> 
+	</ul>
+
+<!-- Social Start -->
+<table style="margin-left: 130px; margin-top: 60px;">
+	<tbody><tr><td align="left"></td>
+</tr></tbody></table>
+<!-- Social  End-->
+
+</div>
+
+</div>	
+</center>
+</div> <!--container4hd done -->
+
+
+<div id="round_headerLie">
+<center>
+<table cellspacing="0" cellpadding="0" id="navresponsive">
+<tbody><tr><td>
+	<ul id="nav">		
+		<li><a href="http://www.java4s.com/struts-tutorials/">Struts</a></li>	
+		<li><a href="http://www.java4s.com/hibernate/">Hibernate</a>	</li>	
+		<li><a href="http://www.java4s.com/spring/">Spring</a></li>
+		<li><a href="http://www.java4s.com/spring-mvc/">Spring-MVC</a></li>
+		<li><a href="http://www.java4s.com/web-services/">Web Services</a></li>
+		<li><a href="http://www.java4s.com/ajax/">Ajax</a></li>
+		<li><a href="http://www.java4s.com/json/">Json</a></li>
+		<li><a href="http://www.java4s.com/log4j-tutorials/">Log4j</a></li>
+		<li><a href="http://www.java4s.com/jquery-tutorials/">jQuery</a></li>
+		<li><a href="http://www.java4s.com/core-java/">Core Java</a></li>
+		<li><a href="http://www.java4s.com/java-servlet-tutorials/">Servlets</a></li>
+		<li><a href="http://www.java4s.com/angularjs-tutorials/">AngularJs</a></li>
+	</ul>
+</td>
+</tr></tbody></table>
+</center>
+</div>
+
+<div id="round_header11">
+<center>
+<table cellspacing="0" cellpadding="0" id="navresponsive">
+ <tbody><tr><td>    
+	<div id="topmessage">
+			You can view the tutorials best in 
+			<font color="#0036db">G</font><font color="#de0c32">o</font><font color="#feb90d">o</font><font color="#0036db">g</font><font color="#00810c">l</font><font color="#de0c32">e</font> Chrome, <font color="#ce480d">M</font>ozilla <font color="#2070b8">F</font>irefox, <font color="#c70f16">O</font>pera, higher version of Internet Explorer.
+	</div>
+
+	<div id="searchBox">
+		<form id="searchform" method="get" action="http://www.java4s.com/index.php" onsubmit="return submitSearchForm();" style="margin-bottom: 0px;">
+			<table cellspacing="0" cellpadding="0">
+				<tbody><tr>
+				  <td>
+					<input type="text" value="search for something..." name="s" id="si" onfocus="if (this.value == &#39;search for something...&#39;) {this.value = &#39;&#39;;}" onblur="if (this.value == &#39;&#39;) {this.value = &#39;search for something...&#39;;}">
+				  </td>
+				 <td><!--	<input type="submit" value="" name="submit-search" id="search_buttoni" /> --></td>
+			   </tr>
+			  </tbody></table>
+		</form>
+	</div>
+
+</td>
+</tr></tbody></table>
+</center>
+</div>
+
+
+<center>
+<div id="googleTopad">
+	<div id="hadshadow"></div>
+    <div id="hads">
+
+ 	  <div style="float:left;">
+        <center>
+				<script type="text/javascript"><!--
+				google_ad_client = "ca-pub-0772613040117520";
+				/* java4s 728 90 */
+				google_ad_slot = "7548452054";
+				google_ad_width = 728;
+				google_ad_height = 90;
+				//-->
+				</script>
+				<script type="text/javascript" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/show_ads.js">
+				</script><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+		</center>
+	   </div>
+	   <div style="float:right;width:190px;padding-top: 0px;">
+		<table>
+		<tbody><tr>
+			<td style="padding-top: 8px;">
+				<div id="___follow_0" style="text-indent: 0px; margin: 0px; padding: 0px; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 89px; height: 64px; background: transparent;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 89px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 64px;" tabindex="0" vspace="0" width="100%" id="I0_1447993970649" name="I0_1447993970649" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/follow(1).html" data-gapiattached="true"></iframe></div>
+			</td>
+			<td>
+				<div class="fb-like fb_iframe_widget" data-href="https://www.facebook.com/java4s" data-layout="box_count" data-action="like" data-show-faces="true" data-share="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=&amp;container_width=0&amp;href=https%3A%2F%2Fwww.facebook.com%2Fjava4s&amp;layout=box_count&amp;locale=en_US&amp;sdk=joey&amp;share=false&amp;show_faces=true"><span style="vertical-align: bottom; width: 48px; height: 61px;"><iframe name="f21e5009bc" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:like Facebook Social Plugin" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/like.html" style="border: none; visibility: visible; width: 48px; height: 61px;" class=""></iframe></span></div>
+			</td>
+		</tr>
+		</tbody></table>
+
+   </div>
+   </div>
+</div>
+</center>
+<!--body starts -->
+
+<div id="containerArchives">
+  <table cellspacing="0" cellpadding="0">
+    <tbody><tr>
+	  <td valign="top">
+			<div id="content">        		
+							
+				<div class="stars">
+					<h1>Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow</h1>
+				</div>
+				<div class="clear"></div>
+
+				<table style="margin-bottom: 12px;">
+					<tbody><tr>
+						<td>
+							<div id="lfi">
+														<a href="http://www.java4s.com/spring-mvc/"> Spring-MVC</a>     »
+														<!--
+							 On Jul 13, 2013 <a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comments" title="Comment on Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow">| <b><i><u>{ 51 Comments }</u></i></b></a> -->
+
+							 On Jul 13, 2013 
+							By <a href="https://plus.google.com/118054670710951892925?rel=author" target="_blank">Sivateja</a>
+							</div>
+
+						</td>
+						<td>
+							<div id="socialindextop">
+							<span class="fb-home-btn">
+							<div class="fb-like fb_iframe_widget" data-href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=&amp;container_width=80&amp;href=http%3A%2F%2Fwww.java4s.com%2Fspring-mvc%2Fspring-mvc-execution-flow-diagram-spring-mvc-3-2-flow%2F&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;send=false&amp;show_faces=true&amp;width=450"><span style="vertical-align: bottom; width: 77px; height: 20px;"><iframe name="f1c1900c54" width="450px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:like Facebook Social Plugin" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/like(1).html" style="border: none; visibility: visible; width: 77px; height: 20px;" class=""></iframe></span></div>
+							</span>
+
+							<span class="twitter-home-btn">
+							<iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" title="Twitter Tweet Button" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/tweet_button.e00c464da75b252cb1a028400793cadc.en.html" style="position: static; visibility: visible; width: 78px; height: 20px;"></iframe><script type="text/javascript" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/widgets.js"></script>
+							</span>
+
+							<span class="plus-home-btn">
+							<div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px; background: transparent;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I2_1447993970656" name="I2_1447993970656" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/fastbutton.html" data-gapiattached="true" title="+1"></iframe></div>
+							</span>
+							</div>
+						</td>		
+						</tr>
+				</tbody></table>
+
+				<div class="clear"></div>
+
+				<center>			
+					<script type="text/javascript"><!--
+					google_ad_client = "ca-pub-0772613040117520";
+					/* TextAd In Index Page */
+					google_ad_slot = "4051461924";
+					google_ad_width = 468;
+					google_ad_height = 60;
+					//-->
+					</script>
+					<script type="text/javascript" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/show_ads.js">
+					</script><ins id="aswift_1_expand" style="display:inline-table;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:468px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:468px;background-color:transparent"><iframe width="468" height="60" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;"></iframe></ins></ins>				
+				</center>
+								
+				<div class="clear"></div>				
+							 
+								<p><span title="L" class="post-first-letter">L</span>et us see the flow of spring MVC (3.2). I am not going to describe what is M,V,C <img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/icon_smile.gif" alt=":-)" class="wp-smiley"> hope you already know that mess right ? so lets start with the flow…</p>
+<p style="text-align: center;"><a href="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/Spring-MVC-execution-flow.png"><img class="aligncenter" title="Spring-mvc-execution-flow" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/Spring-MVC-execution-flow.png" alt="" width="500" height="500"></a></p>
+<h2 style="text-align: left;">Spring MVC 3.2 Execution Flow</h2>
+<p>Step <strong>1</strong>: First request will be received by <span style="color: #99cc00;">DispatcherServlet</span><br>
+Step <strong>2</strong>: <span style="color: #ff6600;">DispatcherServlet</span> will take the help of <span style="color: #800080;">HandlerMapping</span> and get to know the <span style="color: #3366ff;">Controller</span> class name associated with the given request<br>
+Step <strong>3</strong>: So request transfer to the Controller, and then controller will process the request by executing appropriate methods and returns <span style="color: #339966;">ModeAndView</span> object (contains <span style="text-decoration: underline;"><em>Model</em> </span>data and <span style="text-decoration: underline;"><em>View</em> </span>name) back to the DispatcherServlet<br>
+Step 4: Now DispatcherServlet send the model object to the <span style="color: #333399;">ViewResolver</span> to get the actual view page<br>
+Step <strong>5</strong>: Finally <span style="color: #333399;">DispatcherServlet</span> will pass the <em>Model</em> object to the <em>View</em> page to display the result</p>
+<p>That’s it <img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/icon_smile.gif" alt=":-)" class="wp-smiley"></p>
+<p>Just remember this diagram for the <span style="color: #3366ff;">interview</span> purpose, i will explain you the practical flow in the first example.</p>
+			
+												
+				<br>
+				<div class="clear"></div>
+				<center>		
+					<script async="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/adsbygoogle.js"></script>
+					<!-- new 336 -->
+					<ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-0772613040117520" data-ad-slot="8502727286" data-adsbygoogle-status="done"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><iframe width="336" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins>
+					<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>	
+				</center>					
+				
+				
+				<div class="pnbuttons">		
+				     				     <a href="http://www.java4s.com/spring-mvc/spring-mvc-hello-world-spring-mvc-3-2-hello-world-example-in-eclipse/" rel="next"><img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/next.png" id="navbuttons" style="opacity: 0.5;"></a>				</div>
+				
+				
+				<table style="background: #eeeeee;width: 100%;margin-top: 40px;" id="authorindex">
+				<tbody><tr>
+					<td style="width: 8px;"></td>
+					<td><img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/sivateja_kandula.jpg"></td>
+					<td style="width: 8px;"></td>
+					<td>
+						<font face="verdana">By
+						<a href="https://plus.google.com/118054670710951892925?rel=author" rel="author" target="_blank">
+						<font size="3px" color="#0077cc"><i><u>Sivateja Kandula</u></i><u> ♦</u></font></a> ( Java/J2EE Developer &amp; Web Designer )<br>Founder of Java4s.com. You can contact me at 
+						<a href="mailto:sivateja@java4s.com" style="text-decoration:none;"><font color="#0077cc">sivateja [at] java4s.com</font></a></font>
+						<div align="right" style="margin: 5px;"><div id="___follow_1" style="text-indent: 0px; margin: 0px; padding: 0px; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 120px; height: 20px; background: transparent;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 120px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I1_1447993970653" name="I1_1447993970653" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/follow.html" data-gapiattached="true"></iframe></div>
+					</div></td>
+				</tr>
+				</tbody></table>
+
+				
+                <div id="commentsStart">    
+					<div id="line"></div>
+					<h2>Comments</h2>
+					<div id="comments">	
+						<div class="abc">	                           
+								<div class="spcomments">			
+									 
+<!-- You can start editing here. -->
+
+		<font face="arial">
+	51 Responses to “Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow”   </font>
+	<ol class="commentlist">
+			<li class="comment even thread-even depth-1" id="comment-1570">
+				<div id="div-comment-1570" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/efd9ceb2e1f75ae71b7b314d014c4be6" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn"><a href="http://www.java4s.com/" rel="external nofollow" class="url">ramesh</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-1570">
+			July 30, 2013 at 2:12 PM</a>		</div>
+
+		<p>Dear sir,</p>
+<p>It’s a good site who is learning for the first time.<br>
+Thanks &amp; Regards<br>
+ramesh</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1637">
+				<div id="div-comment-1637" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/e626d67a9d2661552c5465853c2837c9" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn"><a href="http://www.java4s.com/" rel="external nofollow" class="url">sam</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-1637">
+			August 17, 2013 at 10:45 AM</a>		</div>
+
+		<p>hi,, thanks for the info.. well explained</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-1725">
+				<div id="div-comment-1725" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/13ba61d02892a0ec92ec5bcfa9490fdf" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn"><a href="http://www.java4s.com/" rel="external nofollow" class="url">shanmukha</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-1725">
+			September 10, 2013 at 9:19 AM</a>		</div>
+
+		<p>Thanku very much, it is very nice and easy to understand…….</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1888">
+				<div id="div-comment-1888" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/60afdce5496c548544eabbf76906ef6f" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn"><a href="http://www.java4s.com/" rel="external nofollow" class="url">laltu</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-1888">
+			October 23, 2013 at 8:12 AM</a>		</div>
+
+		<p>Hi Sivateja<br>
+when Web Sevices tutorial will come…please confirm me bcoz i am waiting &amp; crazzy…plzzzz. or other wise give any reference to read web services in easy language &amp; concept like your site</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-1934">
+				<div id="div-comment-1934" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/4d75385f795edf8fdfb7059158d8a1c6" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn"><a href="http://www.java4s.com/" rel="external nofollow" class="url">Sanjeev Kumar Srivastava</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-1934">
+			November 13, 2013 at 3:57 PM</a>		</div>
+
+		<p>Good Its very helpfull to us…</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1944">
+				<div id="div-comment-1944" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/b28aee8dd934526a06d3ece82b07e71e" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn"><a href="http://www.java4s.com/" rel="external nofollow" class="url">viswanath</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-1944">
+			November 18, 2013 at 10:45 AM</a>		</div>
+
+		<p>Hi,</p>
+<p>For beginners the flow diagram explanation is nice and good. Easy to grab.</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-1946">
+				<div id="div-comment-1946" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/cf100005bb7addbbf77f1271c9e4f8c8" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn"><a href="http://sunstore.in/" rel="external nofollow" class="url">ard</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-1946">
+			November 19, 2013 at 8:56 AM</a>		</div>
+
+		<p>Thanks a lot for this introductory article and it helped me lot to understand.</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1947">
+				<div id="div-comment-1947" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/cf100005bb7addbbf77f1271c9e4f8c8" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn"><a href="http://sunstore.in/" rel="external nofollow" class="url">ard</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-1947">
+			November 19, 2013 at 9:00 AM</a>		</div>
+
+		<p>Thanks for posting such a nice article.<br>
+It helped me a lot to get the overview.</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-1999">
+				<div id="div-comment-1999" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/de919d9721f0db08037690f40b0ac6b1" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn"><a href="http://www.java4s.com/" rel="external nofollow" class="url">OM</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-1999">
+			December 12, 2013 at 12:03 PM</a>		</div>
+
+		<p>Hi can you able to tell me Which dependency is better among setter and Constructor.Why?</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-2207">
+				<div id="div-comment-2207" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/3d8abf9844288101c24a1faedb133cfb" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn"><a href="http://www.java4s.com/" rel="external nofollow" class="url">sheela V</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-2207">
+			March 7, 2014 at 5:12 PM</a>		</div>
+
+		<p>Its good for beginners:)</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-2216">
+				<div id="div-comment-2216" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/5f6153d9645ec4977008c37346995faa" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn"><a href="http://www.java4s.com/" rel="external nofollow" class="url">ksrirampavan</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-2216">
+			March 12, 2014 at 4:37 AM</a>		</div>
+
+		<p>If suppose we can use  spring with structs using our applications for this which controller servlet will be execute please tell me it s one of the intvw question</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-2395">
+				<div id="div-comment-2395" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/2820a58e70fc3e11041ff187dcc0c930" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn"><a href="http://www.java4s.com/" rel="external nofollow" class="url">manohar</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-2395">
+			May 23, 2014 at 12:39 PM</a>		</div>
+
+		<p>what is exact difference between Inversion Of Control(IOC) and Dependecy Injection(DI)</p>
+<p>Please give me answer as soon as possible.</p>
+<p>Thanks in adv..</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-2458">
+				<div id="div-comment-2458" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/bee246bfeb791cca631eca6498136b6e" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn"><a href="http://www.java4s.com/" rel="external nofollow" class="url">vignesh</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-2458">
+			June 24, 2014 at 5:02 AM</a>		</div>
+
+		<p>hai .it’s very nice ..now i understood the way of flow…i have one doubt while developing project we have use dependency or jar files which is best…….</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-2469">
+				<div id="div-comment-2469" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/d399486843db298463f55758b7b73910" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn"><a href="http://www.java4s.com/" rel="external nofollow" class="url">sumit</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-2469">
+			June 27, 2014 at 10:06 AM</a>		</div>
+
+		<p>I have a very bad confusion In spring MVC I use println method in every statement of command class setter and getter method I have a home page where I have use a link to go to login page when I click on link then control forward to login page and there is only two fileld I have declared so why getter method of user name and password called 4-4 times ..pls help me out.</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-2517">
+				<div id="div-comment-2517" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/921f84e8904cdb9bdac1d975c4538cdc" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn">MARUTHAM</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-2517">
+			July 7, 2014 at 7:03 AM</a>		</div>
+
+		<p>Thanks lot gaving  explanation…can u able to gave a small example with spring mvc and  hibernate with annotations</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-2529">
+				<div id="div-comment-2529" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/874c8c8dd945511a1637001022cc6bb2" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn">Ganga prasad</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-2529">
+			July 9, 2014 at 6:20 AM</a>		</div>
+
+		<p>Thanks.. it’s a good example for beginners</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-2592">
+				<div id="div-comment-2592" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/d1dc3d33f2d57be1c9d744bf289deeee" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn">ravikumar</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-2592">
+			July 24, 2014 at 4:39 AM</a>		</div>
+
+		<p>nice example</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-2670">
+				<div id="div-comment-2670" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/d42a4bc6fff46003db6731e5b29189ac" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn">Trupti</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-2670">
+			August 13, 2014 at 5:57 AM</a>		</div>
+
+		<p>Very easy to understand.. <img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/icon_smile.gif" alt=":)" class="wp-smiley"></p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-2698">
+				<div id="div-comment-2698" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/d4a73df6834c19934a2e3097ec633f44" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn">Tulasi</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-2698">
+			August 21, 2014 at 12:01 PM</a>		</div>
+
+		<p>Thanks, nice example</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-2730">
+				<div id="div-comment-2730" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/9089c34c66f10a77009a5d43e50c9d00" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn">poocholamannan</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-2730">
+			August 27, 2014 at 9:07 AM</a>		</div>
+
+		<p>its very nice.</p>
+<p>Thanks&amp;Regards</p>
+<p>Poocholamannan.J</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-2795">
+				<div id="div-comment-2795" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/b8510f665ed90188fb1a4ded268b6b11" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn">Saurabh</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-2795">
+			September 10, 2014 at 5:44 AM</a>		</div>
+
+		<p>Can you please upload content for Spring autowiring with annotation</p>
+<p>Thanks.</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-2847">
+				<div id="div-comment-2847" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/b255eda92d9b9153546698422eb71bb6" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn">Balu</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-2847">
+			September 18, 2014 at 5:31 PM</a>		</div>
+
+		<p>Thank u very much ,easy to understand</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-2856">
+				<div id="div-comment-2856" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/043f293cc4d6c0fbad6150b3164dfc87" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn"><a href="http://nothing/" rel="external nofollow" class="url">Sethurambalaji</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-2856">
+			September 19, 2014 at 3:13 PM</a>		</div>
+
+		<p>Thank u for such a simple and powerful explanation.</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-2914">
+				<div id="div-comment-2914" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/c332dd13d1ed46c3d9858d26bc4b06c2" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn">mohan</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-2914">
+			October 1, 2014 at 5:47 PM</a>		</div>
+
+		<p>what i can say its awesome ….!and easy to understand…!!</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-2979">
+				<div id="div-comment-2979" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/235b8897e2d9b6a0fe4d703f0ac52854" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn">rohit</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-2979">
+			October 16, 2014 at 2:43 PM</a>		</div>
+
+		<p>Thank You very much, nice explaination</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-3043">
+				<div id="div-comment-3043" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/182ae159fc9091e0ac3b50e5c3381f2b" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn"><a href="http://www.java4s.com/" rel="external nofollow" class="url">Nagarjun</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-3043">
+			October 30, 2014 at 1:49 PM</a>		</div>
+
+		<p>Hi,<br>
+it real good explanation for Java/J2ee develpers</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-3128">
+				<div id="div-comment-3128" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/9cd8702870ab35f0417161483599c423" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn">nikhil Jatale</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-3128">
+			November 21, 2014 at 9:17 AM</a>		</div>
+
+		<p>Thanks a lot …… It’s awesome…..</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-3133">
+				<div id="div-comment-3133" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/84c5f074293d13d945f36451209a289b" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn">SIva Nadupuru</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-3133">
+			November 22, 2014 at 8:04 AM</a>		</div>
+
+		<p>good exmple for beginners</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-3156">
+				<div id="div-comment-3156" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/78bab7d854ff353ce6342e268b76642b" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn">Shyam</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-3156">
+			November 26, 2014 at 1:31 PM</a>		</div>
+
+		<p>Well explained and easy to understand.</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-3209">
+				<div id="div-comment-3209" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/7d4eec7f1afd3901acd2cd9a00cfa9ed" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn">pavan kumar</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-3209">
+			December 10, 2014 at 12:05 AM</a>		</div>
+
+		<p>sir it is good but in interviews they ask  Boot strapping of Spring MVC (how internally context loader listener,dispatcher servlet is build for handing request )</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-3310">
+				<div id="div-comment-3310" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/9e10b5f28d8b97edb4dd384f3dc64fe7" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn">Naveen Kumar K R</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-3310">
+			January 9, 2015 at 5:54 PM</a>		</div>
+
+		<p>easy to learn.. great website</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-3351">
+				<div id="div-comment-3351" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/5ded13c5b07f042527e2bbe22ff335ae" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn">subbareddy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-3351">
+			January 22, 2015 at 9:56 AM</a>		</div>
+
+		<p>Hi,<br>
+ It’s very good website for learning java.<br>
+ Please add all concepts in spring-mvc</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-3375">
+				<div id="div-comment-3375" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/9e5c3a272c2d4c66c429258ddde38366" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn">Chidrewar Rahul</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-3375">
+			January 30, 2015 at 11:39 AM</a>		</div>
+
+		<p>Hi,<br>
+it is dam easy for beginners.specially it is very good website for learning hibernate,struts2</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-3389">
+				<div id="div-comment-3389" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/34b5894a7b71fcc16d4eddadf3e9508c" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn">cyper</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-3389">
+			February 8, 2015 at 5:49 AM</a>		</div>
+
+		<p>this flow chart is really very intuitive and helpful, thanks<br>
+BTW, is there any updates for spring 4. <img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/icon_smile.gif" alt=":)" class="wp-smiley"></p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-3398">
+				<div id="div-comment-3398" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/17129f08be107b1a64d0f3766d4f9405" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn">Ankit</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-3398">
+			February 12, 2015 at 5:47 PM</a>		</div>
+
+		<p>How dispatcher servlet knows which controller has to be executed , if there are multiple controllers present ?</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-3426">
+				<div id="div-comment-3426" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/eeed2ea06b3c3bff433d1ba6e01e2e14" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn">prempaul</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-3426">
+			February 24, 2015 at 12:33 PM</a>		</div>
+
+		<p>Hi,<br>
+   All dear this pictorial representation and short Explation are easy and understandable —thanks java4s.com team</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-3644">
+				<div id="div-comment-3644" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/81decab28ffb83077cab09b89c96151f" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn">Sheik</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-3644">
+			May 6, 2015 at 4:31 AM</a>		</div>
+
+		<p>Hi,</p>
+<p>Thanks for your easy understanding materials<br>
+Please add the JSF materials also.</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-3728">
+				<div id="div-comment-3728" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/0b834717976bc54786cd741dede67a4b" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn">shilpa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-3728">
+			June 3, 2015 at 3:22 PM</a>		</div>
+
+		<p>Great tutorial sir , Thanks</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-3740">
+				<div id="div-comment-3740" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/affc26b5cc7e4d061b2a08ca1af55291" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn">shukla</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-3740">
+			June 5, 2015 at 2:32 PM</a>		</div>
+
+		<p>Really very nice explaination……..</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-3759">
+				<div id="div-comment-3759" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/edba1a4c94556505520f0e857d15ab6c" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn">Aaaksh</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-3759">
+			June 9, 2015 at 2:33 PM</a>		</div>
+
+		<p>Hi,</p>
+<p>Thanks for your easy understanding materials<br>
+Please add Play Framework materials also.</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-3764">
+				<div id="div-comment-3764" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/d95437d65f9c61a96b054bee9c9fffb9" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn">DurgaRao</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-3764">
+			June 11, 2015 at 12:36 PM</a>		</div>
+
+		<p>hi,</p>
+<p>Thanks for your site .but i am seriously searching about learn DOJO But,is is not explained very well in other sites.So kindly introduce DOJO technoligy in this site .</p>
+<p>Thank you again.</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-3766">
+				<div id="div-comment-3766" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/61da62e936d5d9bc6c6b5f057931eaa4" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn"><a href="http://www.java4s.com/" rel="external nofollow" class="url">thamaraikannan</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-3766">
+			June 13, 2015 at 1:05 PM</a>		</div>
+
+		<p>bigginer can understand easily</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-3768">
+				<div id="div-comment-3768" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/7539e1b5ee23a2d597f91bc53514632d" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn">sravani</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-3768">
+			June 14, 2015 at 9:22 AM</a>		</div>
+
+		<p>your blog is very helpful to all java developers. thank you….</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-3798">
+				<div id="div-comment-3798" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/58cf3b92862ddbae3c1a8b612359fedb" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn">Sumanth</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-3798">
+			June 20, 2015 at 1:19 PM</a>		</div>
+
+		<p>@Sivateja Kandula Hi Siva teja, You are providing very nice tutorial which will help developers a lot. It’s very small but i couldn’t stop my self to say thanks to you buddy.</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-4037">
+				<div id="div-comment-4037" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/748ada9ac6ed282ce314951051309d2b" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn">vicky</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-4037">
+			August 17, 2015 at 7:36 AM</a>		</div>
+
+		<p>Good Explanation</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-4053">
+				<div id="div-comment-4053" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/015dcef31632398a7ec395daf847c502" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn">Niraj</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-4053">
+			August 20, 2015 at 11:35 AM</a>		</div>
+
+		<p>Hi Sivateja,</p>
+<p>I have a query. How to disable copy/paste option in text field in jsp.</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-4069">
+				<div id="div-comment-4069" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/5dd067142cd698832d4759b0c3f7c4e9" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn">sri</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-4069">
+			August 24, 2015 at 11:25 AM</a>		</div>
+
+		<p>Maaasth tutorial I LOVE IT</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-4090">
+				<div id="div-comment-4090" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/6f936032bc2295ee13de537a29af26ab" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn"><a href="http://sdf/" rel="external nofollow" class="url">ravi</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-4090">
+			August 27, 2015 at 7:44 PM</a>		</div>
+
+		<p>how to map jsp request to dispatcher servlet</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-4117">
+				<div id="div-comment-4117" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/1e5f75cf676820056b8fe76997c472ae" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn">Laxman Singh</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-4117">
+			September 2, 2015 at 10:13 AM</a>		</div>
+
+		<p>Good to understand the flow of spring mvc in project (-_-)</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-4168">
+				<div id="div-comment-4168" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/748ada9ac6ed282ce314951051309d2b" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn">vicky</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-4168">
+			September 13, 2015 at 1:27 PM</a>		</div>
+
+		<p>It was really helpful thanks</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-4215">
+				<div id="div-comment-4215" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/6e6ecb37831257650b8327af1d79b2b0" class="avatar avatar-35 photo" height="35" width="35">			<cite class="fn">Sai</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#comment-4215">
+			September 28, 2015 at 7:25 PM</a>		</div>
+
+		<p>Thank u so much for such a good explanation</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+	</ol>
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+	
+		
+ 
+
+
+<div id="respond">
+
+<!--
+<div class="dateonhomegra">
+If you want a pic to show with your comment, go get a <a href="http://en.gravatar.com" target="_blank"><b>gravatar</b></a> !
+</div>
+
+<div class="forumred">
+Please post your questions on <b><a href="http://answers.java4s.com" target="_blank">Java4s Answers forum</a></b>
+</div>
+-->
+<div class="cancel-comment-reply">
+	<small><a rel="nofollow" id="cancel-comment-reply-link" href="http://www.java4s.com/spring-mvc/spring-mvc-execution-flow-diagram-spring-mvc-3-2-flow/#respond" style="display:none;">Click here to cancel reply.</a></small>
+</div>
+
+
+<form action="http://www.java4s.com/wp-comments-post.php" method="post" id="commentform">
+
+
+<table cellspacing="0" cellpadding="0" border="0"> 
+
+<tbody><tr>
+
+<td>
+<font size="2px" face="arial"><b>Name</b><font color="#f03a3a">*</font></font><br>
+<input type="text" name="author" id="author" value="" tabindex="1" aria-required="true">
+</td>
+
+
+<td>
+<font size="2px" face="arial"><b>Mail</b><font color="#f03a3a">*</font></font>
+<br>
+<input type="text" name="email" id="email" value="" tabindex="2" aria-required="true">
+</td>
+
+
+
+<td>
+<font size="2px" face="arial"><b>Website</b></font>
+<br>
+<input type="text" name="url" id="url" tabindex="3">
+</td>
+
+</tr>
+</tbody></table>
+
+<p><textarea name="comment" id="comment" cols="100%" rows="3" tabindex="4"></textarea></p>
+
+
+<!--<p><small><strong>XHTML:</strong> You can use these tags: <code>&lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code class=&quot;&quot; title=&quot;&quot; data-url=&quot;&quot;&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; &lt;pre class=&quot;&quot; title=&quot;&quot; data-url=&quot;&quot;&gt; &lt;span class=&quot;&quot; title=&quot;&quot; data-url=&quot;&quot;&gt; </code></small></p>-->
+
+
+
+<p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment"> 
+<input type="hidden" name="comment_post_ID" value="4808" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p>
+<input type="hidden" id="captchafree" name="captchafree" value="">
+<script type="text/javascript">
+//<![CDATA[
+	function gethash(){
+		document.getElementById('captchafree').form.onsubmit = null;
+		if(document.getElementById('submit')) document.getElementById('submit').value='Please wait...';
+		var mysack = new sack("http://www.java4s.com/wp-content/plugins/wp-captcha-free/captcha-free.php");
+		mysack.execute = 1;
+		mysack.method = 'POST';
+		mysack.onError = function() { alert('Unable to get Captcha-Free Hash!') };
+		mysack.setVar('post_id', 4808);
+		mysack.runAJAX();
+		return false;
+	}
+	function gothash(myhash){
+		document.getElementById('captchafree').value = myhash;
+		// Workaround for Wordpress' retarded choice of naming the submit button same as a JS function name >:-(
+		document.getElementById('submit').click();
+	}
+	document.getElementById('captchafree').form.onsubmit = gethash;
+//]]>
+</script>
+<noscript>&lt;p&gt;&lt;strong&gt;Please note:&lt;/strong&gt; JavaScript is required to post comments.&lt;/p&gt;</noscript>
+<br><br>
+<font size="4px" face="times new roman" color="#7e7979">
+ <i>By posting your answer, you agree to our <a href="http://www.java4s.com/privacy-policy/" target="_blank">comments policy</a>. <br></i>
+</font>
+</form>
+
+
+
+</div>
+
+
+								</div>
+						</div>
+					</div>
+				</div>				
+				
+				<div id="mobfooter"> <center>
+	<a href="https://www.facebook.com/java4s" target="_blank">
+	<img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/fbf.gif" width="80px" alt="Facebook_Java4s"></a>&nbsp;
+	<a href="https://twitter.com/java4s" target="_blank">
+	<img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/trf.gif" width="80px" alt="Twitter_Java4s"></a>&nbsp;
+	<a href="https://plus.google.com/+SivatejaKandula/" target="_blank">
+	<img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/gpf.gif" width="80px" alt="GooglePlus_Java4s"></a>&nbsp;
+	<a href="http://www.youtube.com/java4s" target="_blank">
+	<img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/ytf.gif" width="80px" alt="Youtube_Java4s"></a>&nbsp;
+
+	<div class="clear"></div>
+
+	 <font color="#ffffff" size="6em" face="verdana">
+			 © 2010 - 2015 <br> Java4s - Get It Yourself.<br>
+			The content is copyrighted to Sivateja Kandula and may not be reproduced on other websites.
+	 </font>
+	 <div class="clear"></div>
+ </center> </div>
+			</div><!-- Content Div End -->
+
+		</td>
+		<td valign="top" style="background: #fbf9f9">
+				<div id="sidebar">
+
+<div class="widgetnews">
+
+					<div style="margin-bottom: 4px;">	
+					<table><tbody><tr><td>					
+					<font size="2" face="arial">Email
+					<font color="#4a66b7">
+					<font size="4"><b>N</b></font><b>ewsletter</b></font></font><font face="arial" size="2"> to your Inbox | </font>
+
+				<a href="https://plus.google.com/+SivatejaKandula/" target="_blank">
+				<img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/gp.png" style="width: 16px;margin-bottom:-3px;margin-right: 2px;"></a>
+				<a href="https://www.facebook.com/java4s" target="_blank">
+				<img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/fb.png" style="width: 16px;margin-bottom:-3px;margin-right: 2px;"></a>
+				<a href="https://twitter.com/java4s" target="_blank">
+				<img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/tw.png" style="width: 16px;margin-bottom:-3px;margin-right: 2px;"></a>
+				<a href="http://www.youtube.com/java4s" target="_blank">
+				<img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/yt.png" style="width: 16px;margin-bottom:-3px;margin-right: 2px;"></a>
+					</td></tr></tbody></table>					
+
+</div>
+
+
+<div style="border-top: 1px dotted #c7c5c0;height: 1px;margin-bottom: 2px;"></div>
+
+	
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody><tr><td>
+
+<center>
+<style>
+.ctr {      
+  border: 1px solid #da6899;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 4px;
+  padding-right: 4px;
+  background: #fae9f1;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius:3px;
+}</style>
+
+ 
+
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr><td><font face="arial" size="2"> We Have Currently&nbsp;</font></td>
+<td class="ctr"><font face="arial" size="1"> 4617 </font></td>
+<td><font face="arial" size="2">&nbsp;Happy Subscribers</font></td></tr>
+</tbody></table></center>
+
+</td></tr>
+
+<tr><td>
+
+<form id="ajax-form" onsubmit="return false;">
+<table cellspacing="0" cellpadding="0" border="0" style="margin-bottom: 8px;">
+<tbody><tr>
+<td><img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/subscribe.png" width="32px"></td>
+<td width="5px"></td>
+<td style="border: 0px solid #a8c178;">
+<input type="text" name="email" id="subscribe"></td>
+<td width="3px"> </td>
+<td>
+<input type="submit" value="subscribe" id="subscribe_button">
+</td>
+</tr></tbody></table>
+</form>
+
+
+</td></tr>
+</tbody></table>
+
+<span id="ajax-message">
+<center>
+<font face="arial" size="2">Enter e-mail id to get all <u>Updates</u> into your Inbox</font>
+</center>
+</span>
+
+			   
+</div>
+
+<div style="border-top: 1px dotted #c7c5c0;height: 1px;margin-bottom: 10px;"></div>
+
+ <table style="margin-left: 28px;" cellpadding="1" cellspacing="0">
+  <tbody><tr>
+	<td>
+		 <a href="http://www.jvmhost.com/" target="_blank" border="0">
+		 <img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/jvmhost2.png" width="125px" height="125px" alt="Developer friendly private JVM Java hosting with Tomcat, Glassfish, Jetty, JBoss, Ant, Git, Maven at JVM Host">
+		 </a>
+		 <a href="http://compevo.com/" target="_blank" border="0">
+		 <img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/banner.gif" width="125px" height="125px" alt="Compevo Communications"></a>
+	</td>
+	<td>	</td>
+ </tr>
+ <tr>
+	<td colspan="2"><div id="bsap_1294689" class="bsap bsap_1294689" data-serve="CV7IK5T">
+<style type="text/css">
+div.bsap_1294689{width:100%;display:block;}div.bsap_1294689 a{width:125px;}div.bsap_1294689 a img{padding:0;}div.bsap_1294689 a em{font-style:normal;}div.bsap_1294689 a{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0 4px 10px 0;text-align:center;text-decoration:none;overflow:hidden;float:left;}
+div.bsap_1294689 img{border:0;clear:right;}
+div.bsap_1294689 a.adhere{color:#666;font-weight:bold;font-size:11px;border:0px solid #ccc;background:#f2f1f1;text-align:center;}
+div.bsap_1294689 a.adhere:hover{border:0px solid #999;background:#efecec;color:#333;}
+div.bsap_1294689 iframe{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0 4px 10px 0;text-align:center;text-decoration:none;overflow:hidden;float:left;}div.bsap_1294689 a{line-height:100%;}div.bsap_1294689 a.adhere{width:125px;height:125px;line-height:1000%;}html>body div.bsap_1294689 a.adhere{width:123px;height:123px;}div.bsap_1294689 img.s{height:0;width:0;}
+</style>
+<!-- no ad --><a href="http://srv.buysellads.com/ads/click/x/GTND423WCAAILK3JCEB4YKQWCEADTK3JCK7D5Z3JCEBD55Q7CYAIL53KC6BDV277F67DTK3EHJNCLSIZ" class="ad1 odd " title="Expert Java Tomcat Hosting" id="bsa_4963124" target="_blank" rel="nofollow">
+<img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/243514-1414278808.gif" width="125" height="125" alt=""></a><a href="http://srv.buysellads.com/ads/click/x/GTND423WCAAILK3JCEB4YKQWCEADTK3YCA7DCZ3JCEBD55QUF6ADVK7KC6BDV277F67DTK3EHJNCLSIZ" class="ad2  even" title="GoJS is a fast and powerful JavaScript library for implementing interactive diagrams in web applications. " id="bsa_5953054" target="_blank" rel="nofollow">
+<img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/276422-1435763027.png" width="125" height="125" alt=""></a><a href="http://srv.buysellads.com/ads/click/x/GTND423WCAAILK3JCEB4YKQWCEADTKQWF6BILZ3JCEBD55QUCWSDT27KC6BDV277F67DTK3EHJNCLSIZ" class="ad3 odd " title="Help with Homework for Students" id="bsa_5681761" target="_blank" rel="nofollow">
+<img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/267773-1430263156.gif" width="125" height="125" alt=""></a>
+
+<a href="http://buysellads.com/buy/detail/234874/zone/1294689?utm_source=site_234874&utm_medium=website&utm_campaign=imagetext&utm_content=zone_1294689" class="adhere">Advertise Here</a>
+
+
+<script type="text/javascript" id="auto_1" class="ignoreme"> if (typeof(BSACallback) !== 'undefined') BSACallback(); </script></div>	</td>
+ </tr>
+</tbody></table>						   
+
+
+
+<div style="border-top: 1px dotted #c7c5c0;height: 1px;margin-bottom: 10px;"></div>
+
+<table style="margin-left: 8px;"><tbody><tr><td>
+<div class="fb-like-box fb_iframe_widget" data-href="http://www.facebook.com/java4s" data-width="300" data-height="258" data-show-faces="true" data-stream="false" data-header="false" data-border-color="#fbf9f9" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=&amp;container_width=0&amp;header=false&amp;height=258&amp;href=http%3A%2F%2Fwww.facebook.com%2Fjava4s&amp;locale=en_US&amp;sdk=joey&amp;show_faces=true&amp;stream=false&amp;width=300"><span style="vertical-align: bottom; width: 300px; height: 214px;"><iframe name="f2e94fdfbc" width="300px" height="258px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:like_box Facebook Social Plugin" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/like_box.html" style="border: none; visibility: visible; width: 300px; height: 214px;" class=""></iframe></span></div>		   
+</td></tr></tbody></table>
+
+<div style="height: 10px; border-top: 1px solid #e9e6e6;margin-top: 10px;"></div>
+
+<div class="widget">						    
+<script async="" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/adsbygoogle.js"></script>
+<!-- Sidebar 300x600 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-0772613040117520" data-ad-slot="6526150884" data-adsbygoogle-status="done"><ins id="aswift_3_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_3_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>				   
+</div>
+
+
+
+
+			<div class="widget1">
+								    <font color="#3C763D">&nbsp;&nbsp;Most Popular Posts</font>
+									<ul>
+										<li><a href="http://www.java4s.com/spring/what-is-spring-framework/" title="What Is Spring Framework, Spring Introduction">What Is Spring Framework, Spring Introduction</a> (58)</li><li><a href="http://www.java4s.com/hibernate/hibernate-second-level-cache-example/" title="Hibernate Second Level Cache Example">Hibernate Second Level Cache Example</a> (52)</li><li><a href="http://www.java4s.com/hibernate/difference-between-merge-and-update-methods-in-hibernate/" title="Difference Between Merge And Update Methods In Hibernate">Difference Between Merge And Update Methods In Hibernate</a> (52)</li><li><a href="http://www.java4s.com/struts-tutorials/struts-2-hibernate-integration-example-struts-2-hibernate-integration/" title="Struts 2 Hibernate Integration Example [ Struts 2 + Hibernate Integration]">Struts 2 Hibernate Integration Example [ Struts 2 + Hibernate Integration]</a> (51)</li><li><a href="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow.html" title="Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow">Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow</a> (51)</li>									</ul>
+			 </div>
+
+			<div class="widget1">
+								<font color="#3C763D">&nbsp;&nbsp;Most Recent Posts</font>
+									<ul>
+											<li><a href="http://www.java4s.com/core-java/java-bloggers-meet-at-hyderabad-to-celebrate-20th-birthday-of-java-hosted-by-oracle/">Java Bloggers Meet at Hyderabad to Celebrate 20th Birthday of Java, Hosted by Oracle</a></li>
+	<li><a href="http://www.java4s.com/core-java/difference-between-string-equalsvalue-and-value-equalsstring-in-java/">Difference between String.equals(“value”) and “value”.equals(String) in Java ?</a></li>
+	<li><a href="http://www.java4s.com/angularjs-tutorials/angularjs-directives-tutorial/">AngularJS Directives Tutorial</a></li>
+	<li><a href="http://www.java4s.com/angularjs-tutorials/angularjs-controller-example-controllers-in-angularjs/">AngularJs Controller Example, Controllers in AngularJs</a></li>
+	<li><a href="http://www.java4s.com/angularjs-tutorials/angularjs-hello-world-example/">AngularJs Hello World Example</a></li>
+	<li><a href="http://www.java4s.com/hibernate/difference-between-hibernate-get-and-load-methods/">Difference Between Hibernate get() and load() Methods ?</a></li>
+	<li><a href="http://www.java4s.com/web-services/jax-rs-example-of-multiple-resource-formats/">JAX-RS Example of Multiple Resource Formats</a></li>
+	<li><a href="http://www.java4s.com/web-services/restful-java-client-example-using-jersey-client/">RESTful Java Client Example Using Jersey Client</a></li>
+	<li><a href="http://www.java4s.com/web-services/jax-rs-xml-example-with-jaxb-using-jersey/">JAX-RS XML Example With JAXB Using Jersey</a></li>
+	<li><a href="http://www.java4s.com/web-services/how-to-test-jax-rs-restful-web-services/">How to Test (JAX-RS) RESTful Web Services</a></li>
+ 
+									</ul>
+			 </div>
+
+<!--
+
+<div style="margin-left: 4px;">
+	<div class="g-person" data-width="310" data-href="//plus.google.com/u/0/118054670710951892925" data-rel="author"></div>
+</div>
+
+---
+
+			 <div class="widget1">
+								<font color="#3C763D">&nbsp;&nbsp;What Readers Are Saying</font>
+									 
+			 </div>	
+-->
+			
+</div>		</td>
+	</tr>
+</tbody></table>
+</div><!-- ContainerArchives Div End -->	
+</div>
+
+<div id="shadow1t">
+<center>
+    <div style="font-face: arial;font-size: 25px; margin:40px;"><i>So, What would <font color="#970ac0">you</font> like to <font color="#f60085">learn</font> today?</i><br>
+		<font face="verdana" size="2px;" color="#3a4238">Browse these popular technologies</font>
+	</div>
+
+<a href="http://www.java4s.com/hibernate/">
+<img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/hibernate.png" width="75px" alt="Hibernate"></a>
+<a href="http://www.java4s.com/spring/">
+<img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/spring.png" width="75px" height="77px" alt="spring"></a>
+<a href="http://www.java4s.com/struts-tutorials/">
+<img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/struts.png" width="75px" alt="struts"></a>
+<a href="http://www.java4s.com/java-servlet-tutorials/">
+<img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/servlets.png" width="75px" alt="Servlets"></a>
+<a href="http://www.java4s.com/ajax/">
+<img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/ajax.png" width="75px" alt="ajax"></a>
+<a href="http://www.java4s.com/log4j-tutorials/">
+<img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/log4j-logo.png" width="75px" alt="Log4j"></a>
+<a href="http://www.java4s.com/jquery-tutorials/">
+<img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/jquery.png" width="75px" alt="jQuery"></a>
+<a href="http://www.java4s.com/json/">
+<img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/json-icon.png" width="75px" alt="Json"></a>
+<a href="http://www.java4s.com/core-java/">
+<img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/core-java.png" width="75px" alt="Core Java"></a>
+<a href="http://www.java4s.com/web-services/">
+<img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/web-services-logo-java4s.png" width="75px" alt="Web Services"></a>
+<a href="http://www.java4s.com/angularjs-tutorials/">
+<img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/angularjs-logo.png" width="75px" alt="AngularJs"></a>
+<br><br>
+
+</center>
+</div>
+
+
+<!--
+<div id="round_fter"></div>
+-->
+<div id="shadow1t">
+<center>
+<div class="mrps">
+Most Recent Tutorials
+</div>
+</center>
+<table border="0" width="930px" cellpadding="0px">
+<tbody><tr>
+<td align="left" style="border-bottom: 2px solid #148ee3;">
+<table><tbody><tr><td><img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/hibernate_icon.png" width="30px"></td>
+<td>
+<font face="verdana">
+ Hibernate Recent Posts
+</font></td>
+</tr>
+</tbody></table>
+</td><td align="left" style="border-bottom: 2px solid #ffca27;">
+<table><tbody><tr><td><img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/sp_icon.png" width="30px"></td>
+<td>
+<font face="verdana">
+ Spring Recent Posts
+</font></td>
+</tr>
+</tbody></table>
+</td>
+
+<td align="left" style="border-bottom: 2px solid #df1f9e;">
+<table><tbody><tr><td>
+<!--  
+<img src="http://www.java4s.com/wp-content/themes/strPro4Tut/java4s/icon.png">
+-->
+<img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/st_icon.png">
+
+</td>
+<td>
+<font face="verdana">
+<!--  
+ Meet the Author(s)
+ -->
+<font face="verdana">
+ Struts Recent Posts
+
+</font></font></td>
+</tr>
+</tbody></table>
+
+</td>
+
+</tr>
+
+
+<tr>
+<td width="310px" valign="top">
+
+
+<ul>
+<li><a href="http://www.java4s.com/hibernate/difference-between-hibernate-get-and-load-methods/">Difference Between Hibernate get() and load() Methods ?</a></li>
+<li><a href="http://www.java4s.com/struts-tutorials/struts-2-hibernate-integration-example-struts-2-hibernate-integration/">Struts 2 Hibernate Integration Example [ Struts 2 + Hibernate Integration]</a></li>
+<li><a href="http://www.java4s.com/hibernate/difference-between-hibernate-save-and-persist-methods/">Difference Between Hibernate Save And Persist Methods</a></li>
+<li><a href="http://www.java4s.com/hibernate/difference-between-merge-and-update-methods-in-hibernate/">Difference Between Merge And Update Methods In Hibernate</a></li>
+<li><a href="http://www.java4s.com/hibernate/hibernate-one-to-one-mapping-using-annotations/">Hibernate One To One Mapping Using Annotations</a></li>
+</ul> 
+
+
+
+</td>
+
+<td valign="top" width="310px">
+
+
+<ul>
+<li><a href="http://www.java4s.com/spring/spring-send-email-with-attachment-using-gmail-smtp-example/">Spring Send Email With Attachment Using Gmail SMTP – Example</a></li>
+<li><a href="http://www.java4s.com/spring/send-java-email-using-spring-with-gmail-smtp-server-settings-javamailsenderimpl-mail/">Send Java Email using Spring With Gmail SMTP Server Settings – JavaMailSenderImpl Mail</a></li>
+<li><a href="http://www.java4s.com/spring/regularexpressionmethodpointcut-class-in-spring-aop/">RegularExpressionMethodPointcut Class In Spring AOP</a></li>
+<li><a href="http://www.java4s.com/spring/namematchmethodpointcut-class-in-spring-aop/">NameMatchMethodPointcut Class In Spring AOP</a></li>
+<li><a href="http://www.java4s.com/spring/spring-aop-static-pointcut-example/">Spring AOP Static Pointcut Example</a></li>
+<li><a href="http://www.java4s.com/spring/spring-aop-pointcut-example/">Spring AOP Pointcut Example</a></li>
+</ul> 
+
+</td>
+
+<td valign="top" width="310px">
+
+<ul>
+<li><a href="http://www.java4s.com/struts-tutorials/struts-2-hibernate-integration-example-struts-2-hibernate-integration/">Struts 2 Hibernate Integration Example [ Struts 2 + Hibernate Integration]</a></li>
+<li><a href="http://www.java4s.com/struts-tutorials/struts2-custom-interceptor-example-struts2-interceptors/">Struts2 Custom Interceptor Example, Struts2 Interceptors</a></li>
+<li><a href="http://www.java4s.com/struts-tutorials/struts2-insertupdatedeleteoperations-through-jdbc-real-time-application/">Struts2 Insert,Update,Delete,Operations Through JDBC [ Real Time Application ]</a></li>
+<li><a href="http://www.java4s.com/struts-tutorials/struts-2-file-upload-save-example/">Struts 2 File Upload &amp; Save Example</a></li>
+<li><a href="http://www.java4s.com/struts-tutorials/working-with-struts-2-tiles-struts-2-tiles-example/">Working With Struts 2 Tiles, Struts 2 Tiles Example</a></li>
+<li><a href="http://www.java4s.com/struts-tutorials/working-with-struts-2-interceptor-with-example/">Working With Struts 2 Interceptor With Example</a></li>
+</ul> 
+
+
+</td>
+
+</tr>
+</tbody></table>
+
+<div style="margin-top: 10px;"></div>
+
+</div>
+
+<div id="shadow1">
+
+<center>
+<table width="940px" cellspacing="0" cellpadding="0" style="background: #d5e1c4;margin-left: -2px;">
+<tbody><tr>
+	<td class="lku">Recomandded Links</td>
+	<td width="1px"></td>
+	<td class="lku"><center>Current &amp; UpComing Tutorials</center></td>
+</tr>
+<tr>
+<td width="295px" valign="top" style="padding: 10px; padding-left: 20px;">						
+	<div class="reclinks">
+	<ul>
+		<li><a href="http://www.eclipse.org/downloads/" target="_blank">Eclipse IDE for Java/J2EE Developers</a></li> 
+		<li><a href="http://download.oracle.com/javase/6/docs/api/overview-summary.html" target="_blank"> Java SE 6.0 API Documentation</a></li>
+		 <li><a href="http://download.oracle.com/javaee/6/api/overview-summary.html" target="_blank"> Java EE 6.0 API Documentation</a></li>
+		 <li><a href="http://docs.oracle.com/javaee/7/tutorial/doc/" target="_blank"> Official Java EE 7 Tutorial</a></li>
+		<li><a href="http://docs.jboss.org/hibernate/core/3.6/reference/en-US/html/" target="_blank"> Hibernate Core Reference Documentation</a></li>
+		<li><a href="http://ant.apache.org/" target="_blank">Apache Ant Home</a></li>
+		<li><a href="http://static.springsource.org/spring/docs/2.5.x/reference/index.html" target="_blank"> The Spring Framework 2.5.x - Ref. Doc</a></li>
+		<li><a href="http://static.springsource.org/spring/docs/3.1.x/spring-framework-reference/html/" target="_blank"> The Spring Framework 3.x - Ref. Doc</a></li>
+		<li><a href="http://struts.apache.org/2.2.1/docs/home.html" target="_blank">Struts Framework 2.x - Ref. Doc</a></li>
+		<li><a href="http://maven.apache.org/" target="_blank">Maven home page</a></li>
+		<li><a href="http://search.maven.org/" target="_blank">Maven central repository Search</a></li>
+		<li><a href="http://jax-ws.java.net/" target="_blank">JAX-WS Official Website</a></li>
+		<li><a href="http://jersey.java.net/" target="_blank">JAX-RS Official Website (Jersey)</a></li>
+		<li><a href="http://www.eclipse.org/downloads/" target="_blank">Eclipse IDE for Java developer</a></li>
+		<li><a href="http://struts.apache.org/2.0.11/docs/home.html" target="_blank"> Apache Struts 2 Reference Documentation</a></li>
+	</ul>
+	</div>
+</td>
+<td class="lm"></td>
+<td width="635px" valign="top" style="padding:10px;">
+<div class="widget1">
+
+<font face="arial" size="2px">Sitemap :</font>
+<div class="space"></div>
+<table cellspacing="0" cellpadding="3" style="margin-left: 5px;">
+<tbody><tr>
+<td>
+<a href="http://www.java4s.com/tutorials/spring/" border="0">
+<img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/spring.png" width="35px" height="38px" alt="spring">
+</a>
+</td>
+
+<td>
+<a href="http://www.java4s.com/tutorials/hibernate/" border="0">
+<img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/hibernate.png" width="35px" alt="Hibernate">
+</a>
+</td>
+
+<td>
+<a href="http://www.java4s.com/tutorials/struts-tutorials/" border="0">
+<img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/struts.png" width="35px" alt="struts">
+</a>
+</td>
+
+<td>
+<a href="http://www.java4s.com/tutorials/json/" border="0">
+<img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/json-icon.png" width="35px" alt="Json">
+</a>
+</td>
+
+<td>
+<a href="http://www.java4s.com/tutorials/ajax/" border="0">
+<img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/ajax.png" width="35px" alt="Ajax">
+</a>
+</td>
+
+<td>
+<a href="http://www.java4s.com/tutorials/log4j-tutorials/" border="0">
+<img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/log4j-logo.png" width="35px" alt="Log4j">
+</a>
+</td>
+
+<td>
+<a href="http://www.java4s.com/tutorials/jquery-tutorials/" border="0">
+<img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/jquery.png" width="35px" alt="Log4j">
+</a>
+</td>
+
+<td>
+<a href="http://www.java4s.com/tutorials/core-java/" border="0">
+<img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/core-java.png" width="35px" alt="coreJava">
+</a>
+</td>
+
+<td>
+<a href="http://www.java4s.com/tutorials/java-servlet-tutorials/" border="0">
+<img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/servlets.png" width="35px" alt="Servlets">
+</a>
+</td>
+
+<td>
+<a href="http://www.java4s.com/tutorials/java-servlet-tutorials/" border="0">
+<img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/web-services-logo-java4s.png" width="35px" alt="Web Services">
+</a>
+</td>
+
+</tr>
+</tbody></table>
+
+
+<br><br>
+<font face="arial" size="2px">Upcoming </font>
+<div class="space"></div>
+&nbsp; Web Services [ SOAP ], JSP
+
+<center>
+
+</center></div></td>
+</tr>
+
+<tr>
+ <td colspan="3" style="padding: 20px;line-height: 1.1em;">
+ <center>
+<a href="https://www.facebook.com/java4s" target="_blank">
+<img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/fbf.gif" width="30px" alt="Facebook_Java4s"></a>&nbsp;
+<a href="https://twitter.com/java4s" target="_blank">
+<img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/trf.gif" width="30px" alt="Twitter_Java4s"></a>&nbsp;
+<a href="https://plus.google.com/+SivatejaKandula/" target="_blank">
+<img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/gpf.gif" width="30px" alt="GooglePlus_Java4s"></a>&nbsp;
+<a href="http://www.youtube.com/java4s" target="_blank">
+<img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/ytf.gif" width="30px" alt="Youtube_Java4s"></a>&nbsp;
+ </center>
+ </td>
+
+</tr><tr>
+ <td colspan="3" style="padding: 20px;line-height: 1.1em;padding-top:2px;">
+ <center>
+ <font color="#6c6a6a" size="1px" face="verdana">
+ © 2010 - 2015 Java4s - Get It Yourself.<br>
+The content is copyrighted to Sivateja Kandula and may not be reproduced on other websites.
+
+ </font>
+ </center>
+ </td>
+</tr><tr>
+</tr></tbody></table>
+
+</center>
+</div>
+
+</div> <!-- top white background div  -->
+<script type="text/javascript" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/platform.js" gapi_processed="true"></script>
+<script type="text/javascript" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/jquery.min.js"></script>
+<script type="text/javascript" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/plusone.js" gapi_processed="true"></script>
+<script type="text/javascript" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/scrolltopcontrol.js"></script>
+<script type="text/javascript" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/ud1.js"></script>
+
+
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=7453444; 
+var sc_invisible=1; 
+var sc_security="bc9a04fb"; 
+</script>
+<script type="text/javascript" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/counter.js"></script>
+<noscript>&lt;div class="statcounter"&gt;&lt;a title="web
+statistics" href="http://statcounter.com/"
+target="_blank"&gt;&lt;img class="statcounter"
+src="http://c.statcounter.com/7453444/0/bc9a04fb/1/"
+alt="web statistics"&gt;&lt;/a&gt;&lt;/div&gt;</noscript>
+<!-- End of StatCounter Code for Default Guide -->
+
+<script>function lc_get_cookie(name) {var c = document.cookie;if (c.indexOf(name) != -1) {var x = c.indexOf(name)+name.length+1;var y = c.indexOf(";",x);if (y < 0) y = c.length;return decodeURIComponent(c.substring(x,y));} else return "";}if ((d = document.getElementById("commentform")) != null) { e = d.elements;var z = lc_get_cookie("comment_author_email_7dd7f92de0915104e9cf0ea3e1da624c");if (z != "") e["email"].value = z;z = lc_get_cookie("comment_author_7dd7f92de0915104e9cf0ea3e1da624c");if (z != "") e["author"].value = z.replace(/\+/g, " ");z = lc_get_cookie("comment_author_url_7dd7f92de0915104e9cf0ea3e1da624c");if (z != "") e["url"].value = z;}</script><div id="topcontrol" title="Scroll Back to Top" style="position: fixed; bottom: 5px; right: 5px; opacity: 0; cursor: pointer;"><img src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/top.png" style="width:21px; height:30px"></div><iframe name="oauth2relay467550429" id="oauth2relay467550429" src="./Spring MVC Execution Flow Diagram, Spring MVC 3.2 Flow_files/postmessageRelay.html" tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe></body></html>

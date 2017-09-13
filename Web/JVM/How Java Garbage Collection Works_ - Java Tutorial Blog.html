@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)http://javapapers.com/java/how-java-garbage-collection-works/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>How Java Garbage Collection Works? - Java Tutorial Blog</title>
+<meta name="description" content="This tutorial is to understand the basics of Java garbage collection and how it works. This is the second part in the garbage collection tutorial series. Hope you have read  introduction to Java garbage collection, which is the first part. Java garbage collection is an automatic process to manage the runtime memory used by programs. […]">
+<meta name="keywords" content="How Java Garbage Collection Works? - Java Tutorial Blog">
+<meta name="verify-v1" content="1OVd8tvioq4O1NR0pxuDN93LbCUNz3uxPbkbevsrObw=">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow"><link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://javapapers.com/feed/">
+<link rel="alternate" type="text/xml" title="RSS .92" href="http://javapapers.com/feed/rss/">
+<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="http://javapapers.com/feed/atom/">
+<link rel="pingback" href="http://javapapers.com/xmlrpc.php">
+<link rel="shortcut icon" href="http://javapapers.com/favicon.ico" type="image/x-icon">
+
+<!-- This site is optimized with the Yoast WordPress SEO plugin v1.7.4 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="./How Java Garbage Collection Works_ - Java Tutorial Blog_files/How Java Garbage Collection Works_ - Java Tutorial Blog.html">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How Java Garbage Collection Works? - Java Tutorial Blog">
+<meta property="og:description" content="This tutorial is to understand the basics of Java garbage collection and how it works. This is the second part in the garbage collection tutorial series. Hope you have read  introduction to Java garbage collection, which is the first part. Java garbage collection is an automatic process to manage the runtime memory used by programs. …">
+<meta property="og:url" content="http://javapapers.com/java/how-java-garbage-collection-works/">
+<meta property="og:site_name" content="Java Tutorial Blog">
+<meta property="article:tag" content="Java">
+<meta property="article:section" content="Java">
+<meta property="article:published_time" content="2014-10-12T22:26:45+00:00">
+<meta property="article:modified_time" content="2014-10-13T00:18:26+00:00">
+<meta property="og:updated_time" content="2014-10-13T00:18:26+00:00">
+<meta property="og:image" content="http://javapapers.com/wp-content/uploads/2014/10/Java-Garbage-Collection-Process3_thumb.jpg">
+<!-- / Yoast WordPress SEO plugin. -->
+
+<link rel="stylesheet" id="papers-style-css" href="./How Java Garbage Collection Works_ - Java Tutorial Blog_files/papers_070620151.css" type="text/css" media="all">
+<script async="" type="text/javascript" src="./How Java Garbage Collection Works_ - Java Tutorial Blog_files/ca-pub-2525233393528874.js"></script><script async="" src="./How Java Garbage Collection Works_ - Java Tutorial Blog_files/analytics.js"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-4275351-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<link href="./How Java Garbage Collection Works_ - Java Tutorial Blog_files/prettify.css" rel="stylesheet" type="text/css"></head>
+<body>
+<div id="site_header">   
+	<a id="java-blog" href="http://javapapers.com/" title="Java Blog"><img src="./How Java Garbage Collection Works_ - Java Tutorial Blog_files/javapaperslogo.png" alt="Java Blog"></a>
+	<img id="java" src="./How Java Garbage Collection Works_ - Java Tutorial Blog_files/java.png" alt="Java">
+</div>
+<div class="content">
+<div id="tutorial-body">
+<h1>How Java Garbage Collection Works?</h1>		
+<p>This tutorial is to understand the basics of Java garbage collection and how it works. This is the second part in the garbage collection tutorial series. Hope you have read&nbsp; <a href="http://javapapers.com/java/java-garbage-collection-introduction/">introduction to Java garbage collection</a>, which is the first part.</p>
+<p>Java garbage collection is an automatic process to manage the runtime memory used by programs. By doing it automatic JVM relieves the programmer of the overhead of assigning and freeing up memory resources in a program.</p>
+<h2>Java Garbage Collection GC Initiation</h2>
+<p>Being an automatic process, programmers need not initiate the garbage collection process explicitly in the code. <code>System.gc()</code> and <code>Runtime.gc()</code> are hooks to request the JVM to initiate the garbage collection process. </p>
+<p>Though this request mechanism provides an opportunity for the programmer to initiate the process but the onus is on the JVM. It can choose to reject the request and so it is not guaranteed that these calls will do the garbage collection. This decision is taken by the JVM based on the eden space availability in heap memory. The JVM specification leaves this choice to the implementation and so these details are implementation specific. </p>
+<p>Undoubtedly we know that the garbage collection process cannot be forced. I just found out a scenario when invoking <code>System.gc()</code> makes sense. Just go through this article to know about this corner case when <a href="http://javapapers.com/core-java/system-gc-invocation-a-suitable-scenario/" title="System.gc() Invocation – A Suitable Scenario">System.gc() invocation is applicable</a>.<br>
+</p><div class="ad-size"><script async="" src="./How Java Garbage Collection Works_ - Java Tutorial Blog_files/adsbygoogle.js"></script>
+<!-- JP Res Mid Post -->
+<ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-2525233393528874" data-ad-slot="3498801173" data-ad-format="rectangle" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><iframe width="336" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div><br>
+<h2>Java Garbage Collection Process</h2>
+<p>Garbage collection is the process of reclaiming the unused memory space and making it available for the future instances.</p>
+<p><img style="background-image: none; border-right-width: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="Java-Garbage-Collection-Process[3]" border="0" alt="Java-Garbage-Collection-Process[3]" src="./How Java Garbage Collection Works_ - Java Tutorial Blog_files/Java-Garbage-Collection-Process3_thumb.jpg" width="610" height="400"></p>
+<p><strong><u>Eden Space:</u></strong> When an instance is created, it is first stored in the eden space in young generation of heap memory area. </p>
+<p>NOTE: If you couldn’t understand any of these words, I recommend you to go through the <a href="http://javapapers.com/java/java-garbage-collection-introduction/">garbage collection introduction tutorial</a> which goes through the memory mode, JVM architecture and these terminologies in detail. </p>
+<p><strong><u>Survivor Space (S0 and S1):</u></strong> As part of the minor garbage collection cycle, objects that are live (which is still referenced) are moved to survivor space S0 from eden space. Similarly the garbage collector scans S0 and moves the live instances to S1.</p>
+<p>Instances that are not live (dereferenced) are marked for garbage collection. Depending on the garbage collector (there are four types of garbage collectors available and we will see about them in the next tutorial) chosen either the marked instances will be removed from memory on the go or the eviction process will be done in a separate process.</p>
+<p><strong><u>Old Generation:</u></strong> Old or tenured generation is the second logical part of the heap memory. When the garbage collector does the minor GC cycle, instances that are still live in the S1 survivor space will be promoted to the old generation. Objects that are dereferenced in the S1 space is marked for eviction.</p>
+<p><strong><u>Major GC:</u></strong> Old generation is the last phase in the instance life cycle with respect to the Java garbage collection process. Major GC is the garbage collection process that scans the old generation part of the heap memory. If instances are dereferenced, then they are marked for eviction and if not they just continue to stay in the old generation. </p>
+<p><strong><u>Memory Fragmentation:</u></strong> Once the instances are deleted from the heap memory the location becomes empty and becomes available for future allocation of live instances. These empty spaces will be fragmented across the memory area. For quicker allocation of the instance it should be defragmented. Based on the choice of the garbage collector, the reclaimed memory area will either be compacted on the go or will be done in a separate pass of the GC.</p>
+<h2>Finalization of Instances in Garbage Collection</h2>
+<p>Just before evicting an instance and reclaiming the memory space, the Java garbage collector invokes the <code>finalize()</code> method of the respective instance so that the instance will get a chance to free up any resources held by it. Though there is a guarantee that the finalize() will be invoked before reclaiming the memory space, there is no order or time specified. The order between multiple instances cannot be predetermined, they can even happen in parallel. Programs should not pre-mediate an order between instances and reclaim resources using the <code>finalize()</code> method.</p>
+<ul>
+<li>Any uncaught exception thrown during finalize process is ignored silently and the finalization of that instance is cancelled. </li>
+<li>JVM specification does not discuss about garbage collection with respect to weak references and claims explicitly about it. Details are left to the implementer. </li>
+<li>Garbage collection is done by a daemon thread. </li>
+</ul>
+<h2>When an object becomes eligible for garbage collection?</h2>
+<ul>
+<li>Any instances that cannot be reached by a live thread. </li>
+<li>Circularly referenced instances that cannot be reached by any other instances. </li>
+</ul>
+<p>There are <a href="http://javapapers.com/core-java/java-weak-reference/" title="Java Reference Types">different types of references in Java</a>. Instances eligibility for garbage collection depends on the type of reference it has.</p>
+<table class="tutorial-table">
+<tbody>
+<tr>
+<th>Reference</th>
+<th>Garbage Collection</th>
+</tr>
+<tr>
+<td>Strong Reference</td>
+<td>Not eligible for garbage collection</td>
+</tr>
+<tr>
+<td>Soft Reference</td>
+<td>Garbage collection possible but will be done as a last option</td>
+</tr>
+<tr>
+<td>Weak Reference</td>
+<td>Eligible for Garbage Collection</td>
+</tr>
+<tr>
+<td>Phantom Reference</td>
+<td>Eligible for Garbage Collection</td>
+</tr>
+</tbody>
+</table>
+<p>During compilation process as an optimization technique the Java compiler can choose to assign <code>null</code> value to an instance, so that it marks that instance can be evicted.</p>
+<pre class="prettyprint lang-java prettyprinted"><span class="kwd">class</span><span class="pln"> </span><span class="typ">Animal</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> main</span><span class="pun">(</span><span class="typ">String</span><span class="pun">[]</span><span class="pln"> args</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="typ">Animal</span><span class="pln"> lion </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Animal</span><span class="pun">();</span><span class="pln">
+        </span><span class="typ">System</span><span class="pun">.</span><span class="pln">out</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="str">"Main is completed."</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="kwd">protected</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> finalize</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="typ">System</span><span class="pun">.</span><span class="pln">out</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="str">"Rest in Peace!"</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></pre>
+<p>In the above class, <code>lion</code> instance is never uses beyond the instantiation line. So the Java compiler as an optimzation measure can assign <code>lion = null</code> just after the instantiation line. So, even before SOP’s output, the finalizer can print ‘Rest in Peace!’. We cannot prove this deterministically as it depends on the JVM implementation and memory used at runtime. But there is one learning, compiler can choose to free instances earlier in a program if it sees that it is referenced no more in the future.</p>
+<ul>
+<li>One more excellent example for when an instance can become eligible for garbage collection. All the properties of an instance can be stored in the register and thereafter the registers will be accessed to read the values. There is no case in future that the values will be written back to the instance. Though the values can be used in future, still this instance can be marked eligible for garbage collection. Classic isn’t it? </li>
+<li>It can get as simple as an instance is eligible for garbage collection when null is assigned to it or it can get complex as the above point. These are choices made by the JVM implementer. Objective is to leave as small footprint as possible, improves the responsiveness and increase the throughput. In order to achieve this the JVM implementer can choose a better scheme or algorithm to reclaim the memory space during garbage collection. </li>
+<li>When the finalize() is invoked, the JVM releases all synchronize locks on that thread. </li>
+</ul>
+<h3>Example Program for GC Scope</h3>
+<pre class="prettyprint lang-java prettyprinted"><span class="typ">Class</span><span class="pln"> </span><span class="typ">GCScope</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+	</span><span class="typ">GCScope</span><span class="pln"> t</span><span class="pun">;</span><span class="pln">
+	</span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+
+	</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> main</span><span class="pun">(</span><span class="typ">String</span><span class="pln"> args</span><span class="pun">[])</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+		</span><span class="typ">GCScope</span><span class="pln"> t1 </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">GCScope</span><span class="pun">();</span><span class="pln">
+		</span><span class="typ">GCScope</span><span class="pln"> t2 </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">GCScope</span><span class="pun">();</span><span class="pln">
+		</span><span class="typ">GCScope</span><span class="pln"> t3 </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">GCScope</span><span class="pun">();</span><span class="pln">
+
+		</span><span class="com">// No Object Is Eligible for GC</span><span class="pln">
+
+		t1</span><span class="pun">.</span><span class="pln">t </span><span class="pun">=</span><span class="pln"> t2</span><span class="pun">;</span><span class="pln"> </span><span class="com">// No Object Is Eligible for GC</span><span class="pln">
+		t2</span><span class="pun">.</span><span class="pln">t </span><span class="pun">=</span><span class="pln"> t3</span><span class="pun">;</span><span class="pln"> </span><span class="com">// No Object Is Eligible for GC</span><span class="pln">
+		t3</span><span class="pun">.</span><span class="pln">t </span><span class="pun">=</span><span class="pln"> t1</span><span class="pun">;</span><span class="pln"> </span><span class="com">// No Object Is Eligible for GC</span><span class="pln">
+
+		t1 </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">;</span><span class="pln">
+		</span><span class="com">// No Object Is Eligible for GC (t3.t still has a reference to t1)</span><span class="pln">
+
+		t2 </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">;</span><span class="pln">
+		</span><span class="com">// No Object Is Eligible for GC (t3.t.t still has a reference to t2)</span><span class="pln">
+
+		t3 </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">;</span><span class="pln">
+		</span><span class="com">// All the 3 Object Is Eligible for GC (None of them have a reference.</span><span class="pln">
+		</span><span class="com">// only the variable t of the objects are referring each other in a</span><span class="pln">
+		</span><span class="com">// rounded fashion forming the Island of objects with out any external</span><span class="pln">
+		</span><span class="com">// reference)</span><span class="pln">
+	</span><span class="pun">}</span><span class="pln">
+
+	</span><span class="kwd">protected</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> finalize</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+		</span><span class="typ">System</span><span class="pun">.</span><span class="pln">out</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="str">"Garbage collected from object"</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> i</span><span class="pun">);</span><span class="pln">
+		i</span><span class="pun">++;</span><span class="pln">
+	</span><span class="pun">}</span></pre>
+<h3>Example Program for GC OutOfMemoryError</h3>
+<p>Garbage collection does not guarantee safety from out of memory issues. Mindless code will lead us to <code>OutOfMemoryError</code>.</p>
+<pre class="prettyprint lang-java prettyprinted"><span class="kwd">import</span><span class="pln"> java</span><span class="pun">.</span><span class="pln">util</span><span class="pun">.</span><span class="typ">LinkedList</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> java</span><span class="pun">.</span><span class="pln">util</span><span class="pun">.</span><span class="typ">List</span><span class="pun">;</span><span class="pln">
+
+</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> GC </span><span class="pun">{</span><span class="pln">
+	</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> main</span><span class="pun">(</span><span class="typ">String</span><span class="pun">[]</span><span class="pln"> main</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+		</span><span class="typ">List</span><span class="pln"> l </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">LinkedList</span><span class="pun">();</span><span class="pln">
+		</span><span class="com">// Enter infinite loop which will add a String to the list: l on each</span><span class="pln">
+		</span><span class="com">// iteration.</span><span class="pln">
+		</span><span class="kwd">do</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+			l</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">String</span><span class="pun">(</span><span class="str">"Hello, World"</span><span class="pun">));</span><span class="pln">
+		</span><span class="pun">}</span><span class="pln"> </span><span class="kwd">while</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">true</span><span class="pun">);</span><span class="pln">
+	</span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></pre>
+<p>Output:</p>
+<pre class="prettyprint lang-java prettyprinted"><span class="typ">Exception</span><span class="pln"> in thread </span><span class="str">"main"</span><span class="pln"> java</span><span class="pun">.</span><span class="pln">lang</span><span class="pun">.</span><span class="typ">OutOfMemoryError</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Java</span><span class="pln"> heap space
+	at java</span><span class="pun">.</span><span class="pln">util</span><span class="pun">.</span><span class="typ">LinkedList</span><span class="pun">.</span><span class="pln">linkLast</span><span class="pun">(</span><span class="typ">LinkedList</span><span class="pun">.</span><span class="pln">java</span><span class="pun">:</span><span class="lit">142</span><span class="pun">)</span><span class="pln">
+	at java</span><span class="pun">.</span><span class="pln">util</span><span class="pun">.</span><span class="typ">LinkedList</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="typ">LinkedList</span><span class="pun">.</span><span class="pln">java</span><span class="pun">:</span><span class="lit">338</span><span class="pun">)</span><span class="pln">
+	at com</span><span class="pun">.</span><span class="pln">javapapers</span><span class="pun">.</span><span class="pln">java</span><span class="pun">.</span><span class="typ">GCScope</span><span class="pun">.</span><span class="pln">main</span><span class="pun">(</span><span class="typ">GCScope</span><span class="pun">.</span><span class="pln">java</span><span class="pun">:</span><span class="lit">12</span><span class="pun">)</span></pre>
+<p>Next is the third part of the garbage collection tutorial series and we will see about the different <a href="http://javapapers.com/java/types-of-java-garbage-collectors/" title="Types of Java Garbage Collectors">types of Java garbage collectors</a> available.</p>
+	<p>This Java tutorial was added on 12/10/2014.</p>
+	<div class="ad-size">
+<script async="" src="./How Java Garbage Collection Works_ - Java Tutorial Blog_files/adsbygoogle.js"></script>
+<!-- JP Res End Post -->
+<ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-2525233393528874" data-ad-slot="1882467179" data-ad-format="rectangle" data-adsbygoogle-status="done"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><iframe width="336" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+	<div id="tutorial-navigation">
+	<div id="previous-tutorial"><div class="navigation-label">Previous:</div><a href="http://javapapers.com/java/java-garbage-collection-introduction/" rel="prev">Java Garbage Collection Introduction</a></div>	<div id="next-tutorial"><div class="navigation-label">Next:</div><a href="http://javapapers.com/java/types-of-java-garbage-collectors/" rel="next">Types of Java Garbage Collectors</a></div> 
+	</div>
+	<div id="comments" class="comments-area">
+        <h2 class="comments-title">Comments on "How Java Garbage Collection Works?" Tutorial:</h2>
+    <ol class="commentlist">		<li class="pingback even thread-even depth-1" id="comment-148715">
+				<div id="div-comment-148715" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn"><a href="http://javapapers.com/java/java-garbage-collection-introduction/" rel="external nofollow" class="url">Java Garbage Collection Introduction</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://javapapers.com/java/how-java-garbage-collection-works/#comment-148715">
+			12/10/2014 at 10:32 pm</a>		</div>
+
+		<p>[…] How Java Garbage Collection Works? […]</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="pingback odd alt thread-odd thread-alt depth-1" id="comment-148722">
+				<div id="div-comment-148722" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn"><a href="http://javapapers.com/java/types-of-java-garbage-collectors/" rel="external nofollow" class="url">Types of Java Garbage Collectors</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://javapapers.com/java/how-java-garbage-collection-works/#comment-148722">
+			12/10/2014 at 11:15 pm</a>		</div>
+
+		<p>[…] is the third part in the garbage collection tutorial series. In the previous part 2 we saw about how garbage collection works in Java, it is an interesting read and I recommend you to go through it. In the part 1 introduction to Java […]</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-148927">
+				<div id="div-comment-148927" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Stefan</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://javapapers.com/java/how-java-garbage-collection-works/#comment-148927">
+			14/10/2014 at 12:54 am</a>		</div>
+
+		<p>Joe, big props! Awesome tutorial and in general your blog Rocks ! :) Keep it up! You make it sound, so easy! But thumbs up, as well for the major technical areas covered in such simple and yet thoroughly explained wording!</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-149199">
+				<div id="div-comment-149199" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Java Coder</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://javapapers.com/java/how-java-garbage-collection-works/#comment-149199">
+			16/10/2014 at 12:03 am</a>		</div>
+
+		<p>Am little confused with “Example Program for GC Scope” could you please explain in detail.</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="pingback even thread-even depth-1" id="comment-149462">
+				<div id="div-comment-149462" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn"><a href="http://javapapers.com/java/java-garbage-collection-monitoring-and-analysis/" rel="external nofollow" class="url">Java Garbage Collection Monitoring and Analysis</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://javapapers.com/java/how-java-garbage-collection-works/#comment-149462">
+			19/10/2014 at 5:07 pm</a>		</div>
+
+		<p>[…] its time to monitor the garbage collection process. Start your Java application and it will be auto detected and shown in the Java VisualVM […]</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-154244">
+				<div id="div-comment-154244" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Prashant Singh</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://javapapers.com/java/how-java-garbage-collection-works/#comment-154244">
+			04/12/2014 at 12:02 pm</a>		</div>
+
+		<p>Hi Joe,<br>
+I have one confusion that which type of object are marked under GC cycle i.e. referenced or derefenced, I think only referenced object are marked so they can moved to next Area(S0,S1 or old Gen).</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+</ol>
+<p class="no-comments">Comments are closed for this "How Java Garbage Collection Works?" tutorial.</p>	
+		</div>
+</div>
+<div id="sidebar">
+    <div class="about">
+		<div class="heading">ABOUT</div>	
+      <div id="aboutdesc">JavaPapers is a Java blog and tutorials site passionately published by <a href="http://javapapers.com/about-me/" title="About Joe and JavaPapers">Joe</a>. Say hi, <a href="mailto:joe@javapapers.com">joe@javapapers.com</a></div>	  
+    </div>
+
+<div class="ads">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2525233393528874";
+/* JP 300 x 250 */
+google_ad_slot = "3145278778";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript" src="./How Java Garbage Collection Works_ - Java Tutorial Blog_files/show_ads.js">
+</script><ins id="aswift_0_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+</div>
+
+    <div class="hiadcomponent">
+	<div class="heading">Join 11,000 Subscribers</div>	
+        <div><form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#39;http://feedburner.google.com/fb/a/mailverify?uri=javapapers/java-interview-questions&#39;, &#39;popupwindow&#39;, &#39;scrollbars=yes,width=550,height=520&#39;);return true"><p><input placeholder="Enter your email here" type="text" class="feedb-email" name="email"><input type="hidden" value="javapapers/java-interview-questions" name="uri"><input type="hidden" name="loc" value="en_US"><input type="submit" value="Subscribe" class="subscribe"></p></form></div>	
+    </div>
+
+    <div id="recommended">
+        <div class="heading">Recommended Tutorials</div>
+        <ul><li><a href="http://javapapers.com/core-java/java-history/" title="Java History">Java History</a></li><li><a href="http://javapapers.com/core-java/overloading-and-overriding/" title="Overloading vs Overriding in Java">Overloading vs Overriding in Java</a></li><li><a href="http://javapapers.com/core-java/eclipse-shortcuts/" title="Eclipse Shortcuts">Eclipse Shortcuts</a></li><li><a href="http://javapapers.com/core-java/java-serialization/" title="Java Serialization">Java Serialization</a></li><li><a href="http://javapapers.com/core-java/abstract-and-interface-core-java-2/difference-between-a-java-interface-and-a-java-abstract-class/" title="Difference Between Interface and Abstract Class">Difference Between Interface and Abstract Class</a></li><li><a href="http://javapapers.com/core-java/java-hashtable/" title="Java Hashtable">Java Hashtable</a></li><li><a href="http://javapapers.com/jsp/difference-between-forward-and-sendredirect/" title="Difference between forward and sendRedirect">Difference between forward and sendRedirect</a></li><li><a href="http://javapapers.com/core-java/differentiate-jvm-jre-jdk-jit/" title="Differentiate JVM JRE JDK JIT">Differentiate JVM JRE JDK JIT</a></li><li><a href="http://javapapers.com/core-java/java-jvm-memory-types/" title="Java (JVM) Memory Types">Java (JVM) Memory Types</a></li><li><a href="http://javapapers.com/core-java/why-multiple-inheritance-is-not-supported-in-java/" title="Why Multiple Inheritance is Not Supported in Java">Why Multiple Inheritance is Not Supported in Java</a></li></ul>
+    </div>
+	
+	<div class="heading">Tutorials Menu</div>
+	<div id="tutorial-menu">
+	<ul class="main-menu"><li class="cat-item cat-item-33"><a href="http://javapapers.com/category/java/">Java</a><ul class="sub-menu"><li class="cat-item cat-item-34"><a href="http://javapapers.com/category/java/introduction/">Introduction</a></li><li class="cat-item cat-item-35"><a href="http://javapapers.com/category/java/java-basics/">Java Basics</a></li><li class="cat-item cat-item-36"><a href="http://javapapers.com/category/java/java-and-oops/">Java and OOPS</a></li><li class="cat-item cat-item-48"><a href="http://javapapers.com/category/java/java-string/">Java String</a></li><li class="cat-item cat-item-47"><a href="http://javapapers.com/category/java/exception-handling/">Exception Handling</a></li><li class="cat-item cat-item-46"><a href="http://javapapers.com/category/java/java-serialization/">Java Serialization</a></li><li class="cat-item cat-item-45"><a href="http://javapapers.com/category/java/java-collections-framework/">Java Collections Framework</a></li><li class="cat-item cat-item-92"><a href="http://javapapers.com/category/java/java-nio/">Java NIO</a></li><li class="cat-item cat-item-44"><a href="http://javapapers.com/category/java/java-generics/">Java Generics</a></li><li class="cat-item cat-item-58"><a href="http://javapapers.com/category/java/java-util/">Java Util</a></li><li class="cat-item cat-item-88"><a href="http://javapapers.com/category/java/concurrent-util/">Concurrent Util</a></li><li class="cat-item cat-item-43"><a href="http://javapapers.com/category/java/java-jdbc/">Java JDBC</a></li><li class="cat-item cat-item-90"><a href="http://javapapers.com/category/java/java-security/">Java Security</a></li><li class="cat-item cat-item-42"><a href="http://javapapers.com/category/java/java-internals/">Java Internals</a></li><li class="cat-item cat-item-89"><a href="http://javapapers.com/category/java/java-garbage-collection/">Java Garbage Collection</a><ul class="post-list"><li><a class="post-menu" href="http://javapapers.com/java/java-garbage-collection-introduction/">Java Garbage Collection Introduction</a></li><li class="current-post">How Java Garbage Collection Works?</li><li><a class="post-menu" href="http://javapapers.com/java/types-of-java-garbage-collectors/">Types of Java Garbage Collectors</a></li><li><a class="post-menu" href="http://javapapers.com/java/java-garbage-collection-monitoring-and-analysis/">Java Garbage Collection Monitoring and Analysis</a></li></ul></li><li class="cat-item cat-item-41"><a href="http://javapapers.com/category/java/java-8/">Java 8</a></li><li class="cat-item cat-item-40"><a href="http://javapapers.com/category/java/java-puzzles/">Java Puzzles</a></li><li class="cat-item cat-item-39"><a href="http://javapapers.com/category/java/third-party/">Third Party</a></li><li class="cat-item cat-item-38"><a href="http://javapapers.com/category/java/tools/">Tools</a></li><li class="cat-item cat-item-85"><a href="http://javapapers.com/category/java/java-interview-questions/">Java Interview Questions</a></li><li class="cat-item cat-item-37"><a href="http://javapapers.com/category/java/others/">Others</a></li><li class="cat-item cat-item-17"><a href="http://javapapers.com/category/java/java-gallery/">Java Gallery</a></li></ul></li><li class="cat-item cat-item-19"><a href="http://javapapers.com/category/android/">Android</a></li><li class="cat-item cat-item-14"><a href="http://javapapers.com/category/design-patterns/">Design Patterns</a></li><li class="cat-item cat-item-86"><a href="http://javapapers.com/category/hibernate/">Hibernate</a></li><li class="cat-item cat-item-25"><a href="http://javapapers.com/category/spring/">Spring</a></li><li class="cat-item cat-item-60"><a href="http://javapapers.com/category/web-services/">Web Services</a></li><li class="cat-item cat-item-6"><a href="http://javapapers.com/category/servlet/">Servlet</a></li></ul>	</div>
+</div><div id="mini-footer">
+	<div id="footer-bottom">© 2008 - 2015 <a href="http://javapapers.com/" title="Java Blog">JavaPapers</a></div>
+	<div><a href="http://javapapers.com/java/how-java-garbage-collection-works/#top" class="top" title="Jump to the top of the page">↑ Go to Top</a> <a href="http://javapapers.com/site-map/" title="Java Tutorials Site Map">Site Map</a></div>
+</div>	
+</div>
+<div id="footer">
+	<ul id="footer-menu">	
+		<li class="cat-item cat-item-33"><a href="http://javapapers.com/category/java/" title="Java Tutorials">Java</a></li>
+		<li class="cat-item cat-item-19"><a href="http://javapapers.com/category/android/" title="Android Tutorials">Android</a></li>
+		<li class="cat-item cat-item-14"><a href="http://javapapers.com/category/design-patterns/" title="Design Patterns Tutorials">Design Patterns</a></li>
+		<li class="cat-item cat-item-25"><a href="http://javapapers.com/category/spring/" title="Spring Tutorials">Spring</a></li>
+		<li class="cat-item cat-item-60"><a href="http://javapapers.com/category/web-services/" title="Web Services Tutorials">Web Services</a></li>
+		<li class="cat-item cat-item-6"><a href="http://javapapers.com/category/servlet/" title="Servlet Tutorials">Servlet</a></li>
+	</ul>
+	<div class="follow"><a href="https://plus.google.com/+JosephKulandai?rel=author" rel="nofollow" title="Google Plus"><img src="./How Java Garbage Collection Works_ - Java Tutorial Blog_files/googleplus.png" alt="Google Plus"></a><a class="facebook" href="https://www.facebook.com/javapapers" rel="nofollow" title="Facebook" target="_blank"><img src="./How Java Garbage Collection Works_ - Java Tutorial Blog_files/facebook.png" alt="Facebook"></a><a class="twitter" href="http://twitter.com/javapapers" rel="nofollow" title="Twitter" target="_blank"><img src="./How Java Garbage Collection Works_ - Java Tutorial Blog_files/twitter.png" alt="Twitter"></a><a class="feed" href="http://javapapers.com/feed/" title="Feed"><img src="./How Java Garbage Collection Works_ - Java Tutorial Blog_files/feed.png" alt="Feed"></a></div>		
+</div><script src="./How Java Garbage Collection Works_ - Java Tutorial Blog_files/prettify.js"></script>
+<script>prettyPrint();</script>
+</body></html>

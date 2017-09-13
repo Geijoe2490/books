@@ -1,0 +1,12 @@
+Spring configuration 
+
+
+* there are 3 ways to validate the bean initiation as below priority wise.
+
+	* Using postConstruct annotation (jsr-250)
+	* Implementing  InitializeBean interface and using setPropertyset method
+	* Using init method ()
+	
+* destroying the bean use 
+	* diposableBean interface  (destroy method)
+	* PreDestroy of jsr250
